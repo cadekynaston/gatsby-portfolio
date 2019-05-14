@@ -1,8 +1,8 @@
 import theme from './theme'
-import Container from './Container'
-import Section from './Section'
+import Container from './container'
+import Section from './section'
 import media from './media'
-import GlobalStyles from './GlobalStyles'
+import GlobalStyles from './globalStyles'
 
 export {
   theme,
