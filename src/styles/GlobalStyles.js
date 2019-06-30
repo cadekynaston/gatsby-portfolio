@@ -11,7 +11,7 @@ const GlobalStyles = ({ colors }) => {
       h1 {
         font-size: 60px;
         line-height: 62px;
-        color: ${colors.textColor};
+        color: ${theme.colors.yellow};
         font-family: ${theme.fonts.RobotoMono};
         margin-bottom: 30px;
         text-align: left;
@@ -34,7 +34,7 @@ const GlobalStyles = ({ colors }) => {
         margin-bottom: 15px;
         text-align: left;
         font-weight: 400;
-        color: ${colors.textColor};
+        color: ${theme.colors.light};
         font-family: ${theme.fonts.Roboto};
 
         ${media.medium} {
@@ -47,6 +47,7 @@ const GlobalStyles = ({ colors }) => {
           font-size: 36px;
           line-height: 38px;
         }
+
       }
 
       h3 {
@@ -54,7 +55,7 @@ const GlobalStyles = ({ colors }) => {
         line-height: 38px;
         margin-bottom: 15px;
         font-weight: 400;
-        color: ${colors.textColor};
+        color: ${theme.colors.light};
         font-family: ${theme.fonts.Roboto};
 
         ${media.medium} {
@@ -150,9 +151,6 @@ const GlobalStyles = ({ colors }) => {
 
       ul {
         color: ${theme.colors.dark};
-        li {
-          margin-bottom: 25px;
-        }
       }
 
       .text-center {
@@ -226,7 +224,6 @@ const GlobalStyles = ({ colors }) => {
 
       .fadedown-enter {
         background-color: transparent;
-
         opacity: 0.01;
         transform: translateY(-20px);
         transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
@@ -234,7 +231,6 @@ const GlobalStyles = ({ colors }) => {
 
       .fadedown-enter-active {
         background-color: transparent;
-
         opacity: 1;
         transform: translateY(0px);
         transition: opacity 300ms ${theme.easing}, transform 300ms ${theme.easing};
@@ -242,7 +238,6 @@ const GlobalStyles = ({ colors }) => {
 
       .fade-enter {
         background-color: transparent;
-
         opacity: 0.01;
         transition: opacity 1000ms ${theme.easing};
       }
@@ -251,6 +246,65 @@ const GlobalStyles = ({ colors }) => {
         opacity: 1;
         transition: opacity 1000ms ${theme.easing};
       }
+
+      vertical-text-transition{
+	display: inline;
+	text-indent: 8px;
+}
+.vertical-text-transition span{
+	animation: topToBottom 16s linear infinite 0s;
+	-ms-animation: topToBottom 16s linear infinite 0s;
+	-webkit-animation: topToBottom 16s linear infinite 0s;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+.vertical-text-transition span:nth-of-type(2){
+	animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
+}
+.vertical-text-transition span:nth-of-type(3){
+	animation-delay: 8s;
+	-ms-animation-delay: 8s;
+	-webkit-animation-delay: 8s;
+}
+.vertical-text-transition span:nth-of-type(4){
+	animation-delay: 12s;
+	-ms-animation-delay: 12s;
+	-webkit-animation-delay: 12s;
+}
+
+
+/*topToBottom Animation*/
+@-moz-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -moz-transform: translateY(-50px); }
+	10% { opacity: 1; -moz-transform: translateY(0px); }
+	25% { opacity: 1; -moz-transform: translateY(0px); }
+	30% { opacity: 0; -moz-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-webkit-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -webkit-transform: translateY(-50px); }
+	10% { opacity: 1; -webkit-transform: translateY(0px); }
+	25% { opacity: 1; -webkit-transform: translateY(0px); }
+	30% { opacity: 0; -webkit-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes topToBottom{
+	0% { opacity: 0; }
+	5% { opacity: 0; -ms-transform: translateY(-50px); }
+	10% { opacity: 1; -ms-transform: translateY(0px); }
+	25% { opacity: 1; -ms-transform: translateY(0px); }
+	30% { opacity: 0; -ms-transform: translateY(50px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
 
     `}
     />

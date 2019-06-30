@@ -9,7 +9,7 @@ tech:
   - CSS grid
   - React Color
   - Github Pages
-show: 'true'
+show: true
 ---
 
 I needed to learn react more so I decided to make connect 4 to get some practice using state.

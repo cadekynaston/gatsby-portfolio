@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Header from "../components/header"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import { Container } from '../styles'
+import { theme } from '../styles'
 import Projects from '../components/projects';
 
 
@@ -16,7 +16,6 @@ const IndexPage = ({ data }) => {
     <>
       <Layout>
         <Header data={data.header.edges}/>
-        {/* <Container><Fade delay={400} duration={600}> <Image /></Fade></Container> */}
         <Projects data={data.projects.edges}/>
       </Layout>
     </>
@@ -47,12 +46,14 @@ export const query = graphql`
             title
             name
             subtitle
+            subitems
             contactText
           }
           html
         }
       }
     }
+
     projects: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/projects/" } }
     ) {
@@ -64,12 +65,13 @@ export const query = graphql`
             tech
             github
             external
-            show
           }
           html
         }
       }
     }
   }
+
+
 `;
 

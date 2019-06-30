@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
+import { media } from '../styles'
 import IconGithub from './images/github'
 import IconLinkedIn from './images/in'
 import IconTwitter from './images/twitter'
@@ -12,15 +13,20 @@ import IconCodewars from './images/codewars'
 
 
 const ItemsContainer = styled.div`
+  display: none;
+  background-color: transparent;
   position: fixed;
-  display: flex;
   flex-direction: column;
   left: 40px;
   bottom: 0;
   font-size: 40px;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   mix-blend-mode: difference;
+
+  ${media.largeUp} {
+    display: flex;
+  }
 
   > * {
     margin-bottom: 15px;
@@ -43,7 +49,10 @@ const SideItemsLeft = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsMounted(true), 1800);
+    console.log('effect')
+    setTimeout(() => {
+      console.log('timeout')
+      setIsMounted(true) }, 1800);
   });
 
   return (

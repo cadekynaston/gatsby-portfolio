@@ -2,23 +2,10 @@ const theme = {
 
   colors: {
     light: '#FAFAFF',
-    dark: '#0B132B',
+    dark: '#30343f',
     purple: '#E4D9FF',
     blue: '#273469',
     darkBlue: '#1E2749',
-  },
-
-  colorsAlt: {
-    light: '#FFFFFF',
-    dark: '#272727',
-    yellow: '#FED766',
-    blue: '#009FB7',
-    gray: '#696773',
-  },
-
-  colorsAlt: {
-    light: '#FFFFFF',
-    dark: '#272727',
     yellow: '#FED766',
     blue: '#009FB7',
     gray: '#696773',
@@ -70,7 +57,7 @@ const theme = {
     },
   },
 
-  maxWidth: '1000px',
+  maxWidth: '1100px',
   padding: '20px',
   margin: '20px',
 

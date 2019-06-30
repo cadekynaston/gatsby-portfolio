@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import { GlobalStyles, theme } from '../styles'
+import Navigation from './Navigation';
 import SideItemsLeft from './SideItemsLeft'
 import SideItemsRight from './SideItemsRight'
 
@@ -34,6 +35,7 @@ class Layout extends React.Component {
     return (
       <main>
         <GlobalStyles colors={this.state.altColors ? theme.darkThemeColors : theme.darkThemeColors} />
+        <Navigation />
         <SideItemsLeft />
         <SideItemsRight />
         {this.props.children}

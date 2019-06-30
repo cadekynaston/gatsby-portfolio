@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import { theme } from '../styles'
+import { theme, media } from '../styles'
 
 
 const ItemsContainer = styled.div`
   position: fixed;
-  display: flex;
+  display: none;
   flex-direction: column;
   right: 40px;
   bottom: 0;
@@ -16,6 +16,10 @@ const ItemsContainer = styled.div`
   justify-content: center;
   align-items:center;
   mix-blend-mode: difference;
+
+  ${media.largeUp} {
+    display: flex;
+  }
 
   > * {
     margin-bottom: 15px;
