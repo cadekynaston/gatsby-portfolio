@@ -2,9 +2,10 @@ const theme = {
 
   colors: {
     light: '#FAFAFF',
-    dark: '#30343f',
+    // dark: '#30343f',
+    dark: '#252627',
     purple: '#E4D9FF',
-    blue: '#273469',
+    // blue: '#273469',
     darkBlue: '#1E2749',
     yellow: '#FED766',
     blue: '#009FB7',
@@ -13,27 +14,6 @@ const theme = {
 
   easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
-
-  get themeColors() {
-    return {
-      backgroundColor: this.colors.light,
-      textColor: '#6FFFE9'
-    }
-  },
-
-  get altThemeColors() {
-    return {
-      backgroundColor: this.colors.dark,
-      textColor: this.colors.light
-    }
-  },
-
-  get darkThemeColors() {
-    return {
-      backgroundColor: this.colors.dark,
-      textColor: '#6FFFE9'
-    }
-  },
 
   mediaSizes: {
     small: {
@@ -76,9 +56,6 @@ const theme = {
     xxlarge: '22px',
     h3: '32px',
   },
-
-  easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-  transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
 
   borderRadius: '2px',
   headerHeight: '100px',

@@ -1,7 +1,7 @@
 ---
 title: 'Hi, my name is'
 name: 'Cade Kynaston'
-subtitle: 'and I love to'
+subtitle: "and I'm a web developer from Utah. I love building sites using React."
 subitems:
   - write code.
   - skateboard.

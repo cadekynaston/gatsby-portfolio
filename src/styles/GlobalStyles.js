@@ -11,7 +11,7 @@ const GlobalStyles = ({ colors }) => {
       h1 {
         font-size: 60px;
         line-height: 62px;
-        color: ${theme.colors.yellow};
+        color: ${theme.colors.blue};
         font-family: ${theme.fonts.RobotoMono};
         margin-bottom: 30px;
         text-align: left;
@@ -92,7 +92,7 @@ const GlobalStyles = ({ colors }) => {
       h5 {
         font-size: 18px;
         line-height: 24px;
-        color: ${theme.colors.dark};
+        color: ${theme.colors.gray};
         font-family: ${theme.fonts.Roboto};
         font-weight: 700;
 
@@ -252,9 +252,9 @@ const GlobalStyles = ({ colors }) => {
 	text-indent: 8px;
 }
 .vertical-text-transition span{
-	animation: topToBottom 16s linear infinite 0s;
-	-ms-animation: topToBottom 16s linear infinite 0s;
-	-webkit-animation: topToBottom 16s linear infinite 0s;
+	animation: topToBottom 12s linear infinite 0s;
+	-ms-animation: topToBottom 12s linear infinite 0s;
+	-webkit-animation: topToBottom 12s linear infinite 0s;
 	opacity: 0;
 	overflow: hidden;
 	position: absolute;
@@ -269,11 +269,7 @@ const GlobalStyles = ({ colors }) => {
 	-ms-animation-delay: 8s;
 	-webkit-animation-delay: 8s;
 }
-.vertical-text-transition span:nth-of-type(4){
-	animation-delay: 12s;
-	-ms-animation-delay: 12s;
-	-webkit-animation-delay: 12s;
-}
+
 
 
 /*topToBottom Animation*/

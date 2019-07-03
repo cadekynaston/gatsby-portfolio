@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import { Container, theme } from '../styles'
+import { Container, theme, media } from '../styles'
 
 const Head = styled.header`
   height: 100vh;
@@ -15,6 +15,12 @@ const Head = styled.header`
   background-color: ${props => props.bgColor ? props.bgColor : theme.colors.dark };
   padding-left: .975rem;
   padding-right: .975rem;
+
+
+  ${media.largeUp} {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 `;
 
 const Header = ({ data, colors, bgColor }) => {
@@ -35,11 +41,11 @@ const Header = ({ data, colors, bgColor }) => {
   const two = () => <h1 style={{ transitionDelay: '300ms' }}>{frontmatter.name}</h1>;
   const three = () => (
     <div style={{ transitionDelay: '400ms' }}>
-      <h3 className="subtitle-items">{frontmatter.subtitle}
-        {/* <div className="vertical-text-transition">
+      <h5 className="subtitle-items">{frontmatter.subtitle}
+        <div className="vertical-text-transition">
           {frontmatter.subitems.map(item => <span key={item}>{item}</span>)}
-        </div> */}
-      </h3>
+        </div>
+      </h5>
     </div>
   );
 
