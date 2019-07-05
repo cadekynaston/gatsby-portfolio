@@ -202,9 +202,9 @@ const GlobalStyles = ({ colors }) => {
 
         &:hover {
           opacity: .4;
-          path {
+          /* path {
             fill: #222;
-          }
+          } */
         }
       }
 

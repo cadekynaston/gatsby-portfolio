@@ -8,6 +8,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import { theme } from '../styles'
 import Projects from '../components/projects';
+import Experience from '../components/experience';
 
 
 const IndexPage = ({ data }) => {
@@ -17,6 +18,9 @@ const IndexPage = ({ data }) => {
       <Layout>
         <Header data={data.header.edges}/>
         <Projects data={data.projects.edges}/>
+        <Experience data={data.projects.edges}/>
+        <Header data={data.header.edges}/>
+
       </Layout>
     </>
   )

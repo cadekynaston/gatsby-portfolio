@@ -35,7 +35,7 @@ class Layout extends React.Component {
     return (
       <main>
         <GlobalStyles colors={this.state.altColors ? theme.darkThemeColors : theme.darkThemeColors} />
-        <Navigation />
+        {/* <Navigation /> */}
         <SideItemsLeft />
         <SideItemsRight />
         {this.props.children}

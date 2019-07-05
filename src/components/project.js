@@ -49,16 +49,37 @@ const Description = styled.p`
  text-align: left;
 `
 
+const TechList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin-right: 5px;
+    font-size: 12px;
+    color: ${theme.colors.blue};
+  }
+`
+
 const Project = ({ img, title, classes, description }) => {
 
   return (
     <ProjectContainer className={classes}>
-      <Img src={img} alt="" />
+      {img && <Img src={img} alt="" />}
       <Separator>
         <Title>{title}</Title>
         <Description>
           {description ? description : "A super cool game I created to practice using react."}
         </Description>
+        <TechList>
+          <li>React</li>
+          <li>Gatsby</li>
+          <li>Netlify</li>
+          <li>Emotion</li>
+          <li>Google Analytics</li>
+        </TechList>
       </Separator>
     </ProjectContainer>
   )
