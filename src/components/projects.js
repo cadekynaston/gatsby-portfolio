@@ -99,7 +99,7 @@ const Projects = ({ data }) => {
             classes="project"
            icon={toys}
            title="Portfolio"
-           description="The previous iteration of my portfolio. My favorite thing about this website are the parallax section headings."
+           description="The previous iteration of my portfolio. My favorite thing about this website is the parallax section headings."
            techList={['Jquery', 'HTML5']}
            codeLink="https://github.com/cadekynaston/portfolio"
            siteLink="https://cadekynaston.github.io/portfolio/" />

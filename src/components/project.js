@@ -72,14 +72,10 @@ const Description = styled.p`
   a {
 
     color: ${theme.colors.mayerPurple};
-
-    &:hover {
-      text-decoration: underline;
-    }
+    text-decoration: underline;
 
     &:visited {
       color: ${theme.colors.mayerPurple};
-
     }
   }
 

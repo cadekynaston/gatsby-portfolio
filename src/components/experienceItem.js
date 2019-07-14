@@ -72,11 +72,11 @@ const Position = styled.h4`
   max-width: 100%;
   text-align: left;
   margin-bottom: 0;
+  margin-right: 15px;
   color: ${theme.colors.lightGray};
 `
 
 const Company = styled.h5`
-  margin-left: 15px;
   color: ${theme.colors.yellow};
 `
 
@@ -99,12 +99,13 @@ const Tech = styled.ul`
     color: ${theme.colors.light};
     margin-bottom: 5px;
     position: relative;
+    padding-left: 20px;
 
     &::before {
-      content : '';
-      position: absolute;
+
       color: ${theme.colors.light};
-      left: -17px;
+      position: absolute;
+      left: 0;
       height: 12px;
       width: 12px;
       top: 0;
@@ -113,7 +114,12 @@ const Tech = styled.ul`
       background-image: url('${rewind}');
       background-size: 12px;
       background-repeat: no-repeat;
+      content : '';
     }
+  }
+
+  ${media.small} {
+    padding-left: 0;
   }
 
 `
