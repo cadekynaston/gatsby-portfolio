@@ -69,6 +69,13 @@ const Description = styled.p`
  margin-bottom: 15px;
  color: ${theme.colors.darkLight};
 
+  a {
+    color: ${theme.colors.mayerPurple};
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
 `
 
 const FlexRow = styled.div`

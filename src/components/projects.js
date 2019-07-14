@@ -82,7 +82,7 @@ const Projects = ({ data }) => {
             classes="project"
             icon={bruner}
             title="Bruner Dynamics"
-            description="My first Gatsby demo site. This site features GraphQL and gatsby-image."
+            description="My first Gatsby demo site. The site utilizes GraphQL, gatsby-image, and Emotion to make it extremely fast."
             techList={['React', 'Gatsby', 'Netlify', 'Emotion', 'GraphQL']}
             codeLink="https://github.com/cadekynaston/gatsby-bruner-dynamics"
             siteLink="https://brunerdynamics.netlify.com/" />
