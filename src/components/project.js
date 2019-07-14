@@ -70,9 +70,16 @@ const Description = styled.p`
  color: ${theme.colors.darkLight};
 
   a {
+
     color: ${theme.colors.mayerPurple};
+
     &:hover {
       text-decoration: underline;
+    }
+
+    &:visited {
+      color: ${theme.colors.mayerPurple};
+
     }
   }
 
