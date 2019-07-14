@@ -16,20 +16,44 @@ const Head = styled.header`
   padding-left: .975rem;
   padding-right: .975rem;
 
-
   ${media.largeUp} {
     padding-left: 100px;
     padding-right: 100px;
   }
 `;
 
-const Header = ({ data, colors, bgColor }) => {
+const HeaderText = styled.h1`
+  max-width: 900px;
+  margin-bottom: 10px;
+`
+
+const HeaderCopy = styled.h5`
+  font-size: 20px;
+  color: ${theme.colors.lightGray};
+  max-width: 900px;
+`
+
+const HeaderLink = styled.a`
+  color: ${theme.colors.clearlinkBlue};
+  text-shadow: -1px -1px 0 ${theme.colors.light}, 1px -1px 0 ${theme.colors.light}, -1px 1px 0 ${theme.colors.light}, 1px 1px 0 ${theme.colors.light};
+
+  &:hover {
+    text-shadow: unset;
+    cursor: pointer;
+  }
+`
+
+const Description = styled.h5`
+  max-width: 900px;
+`
+
+const Header = ({ data, bgColor }) => {
 
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
     setTimeout(() => setIsMounted(true), 1000)
-  });
+  }, []);
 
   const { frontmatter, html } = data[0].node
 
@@ -37,19 +61,10 @@ const Header = ({ data, colors, bgColor }) => {
     return <span>item</span>
   })
 
-  const one = () => <h2 style={{ transitionDelay: '200ms' }}>{frontmatter.title}</h2>;
-  const two = () => <h1 style={{ transitionDelay: '300ms' }}>{frontmatter.name}</h1>;
-  const three = () => (
-    <div style={{ transitionDelay: '400ms' }}>
-      <h5 className="subtitle-items">{frontmatter.subtitle}
-        <div className="vertical-text-transition">
-          {frontmatter.subitems.map(item => <span key={item}>{item}</span>)}
-        </div>
-      </h5>
-    </div>
-  );
+  const one = () => <HeaderText style={{ transitionDelay: '200ms' }}>{frontmatter.name}<HeaderLink href="https://www.clearlink.com" target="_blank"> {frontmatter.company}</HeaderLink></HeaderText>;
+  const two = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{frontmatter.copy}</HeaderCopy>;
 
-  const items = [one, two, three];
+  const items = [one, two];
 
   return (
     <Head bgColor={bgColor}>

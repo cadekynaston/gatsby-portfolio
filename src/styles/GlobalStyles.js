@@ -11,11 +11,11 @@ const GlobalStyles = ({ colors }) => {
       h1 {
         font-size: 60px;
         line-height: 62px;
-        color: ${theme.colors.blue};
-        font-family: ${theme.fonts.RobotoMono};
+        color: ${theme.colors.light};
+        font-family: ${theme.fonts.Raleway};
         margin-bottom: 30px;
         text-align: left;
-        font-weight: 400;
+        font-weight: 600;
 
         ${media.medium} {
           font-size: 50px;
@@ -33,9 +33,9 @@ const GlobalStyles = ({ colors }) => {
         line-height: 50px;
         margin-bottom: 15px;
         text-align: left;
-        font-weight: 400;
+        font-weight: 600;
         color: ${theme.colors.light};
-        font-family: ${theme.fonts.Roboto};
+        font-family: ${theme.fonts.Raleway};
 
         ${media.medium} {
           font-size: 42px;
@@ -55,7 +55,7 @@ const GlobalStyles = ({ colors }) => {
         line-height: 38px;
         margin-bottom: 15px;
         font-weight: 400;
-        color: ${theme.colors.light};
+        color: ${theme.colors.gray};
         font-family: ${theme.fonts.Roboto};
 
         ${media.medium} {
@@ -80,7 +80,7 @@ const GlobalStyles = ({ colors }) => {
       h4 {
         font-size: 24px;
         line-height: 30px;
-        color: ${theme.colors.dark};
+        color: ${theme.colors.darkLight};
         font-family: ${theme.fonts.Roboto};
         font-weight: 400;
 
@@ -92,9 +92,9 @@ const GlobalStyles = ({ colors }) => {
       h5 {
         font-size: 18px;
         line-height: 24px;
-        color: ${theme.colors.gray};
+        color: ${theme.colors.light};
         font-family: ${theme.fonts.Roboto};
-        font-weight: 700;
+        font-weight: 300;
 
         &.light {
           font-weight: 400;

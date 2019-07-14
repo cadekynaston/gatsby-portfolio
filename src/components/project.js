@@ -1,17 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
+import Fade from 'react-reveal/Fade'
 
 import { theme, media } from '../styles'
-import Fade from 'react-reveal/Fade';
+import TechList from './TechList';
+import github from '../images/github-logo.svg'
+import external from '../images/external-link.svg'
 
-const ProjectContainer = styled.div`
-  /* border: 1px solid ${theme.colors.gray}; */
-  padding: 20px;
+
+const ProjectInner = styled.div`
+  background-color: ${theme.colors.light};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 5px;
+  height: 100%;
+  padding: 20px;
   box-shadow: 0px 3px 10px rgba(48, 52, 63, .3);
+  border-radius: 5px;
+
 
   &.featured {
     justify-content: flex-start;
@@ -24,21 +30,35 @@ const ProjectContainer = styled.div`
       max-width: 80%;
     }
   }
+
+`;
+const ProjectContainer = styled.div`
+
+  transition: ${theme.transition};
+  position: relative;
+
+  ${media.largeUp} {
+    &.hovered {
+      transform: translateY(-25px);
+      box-shadow: 0 2px 4px ${theme.colors.lightGray};
+      box-shadow: 0 19px 38px ${theme.colors.lightGray} 0 15px 12px ${theme.colors.lightGray};
+      .project-links {
+        transform: translateY(25px);
+        opacity: 1;
+        z-index: unset;
+      }
+    }
+  }
 `
 
-const Img = styled.img`
- max-width: 100%;
- display: block;
- margin-left: auto;
- margin-right: auto;
- margin-bottom: 15px;
+const Icon = styled.img`
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  margin-right: 15px;
 `
 
-const Separator = styled.div`
-
-`
-
-const Title = styled.h5`
+const Title = styled.h4`
  max-width: 100%;
  text-align: left;
  margin-bottom: 10px;
@@ -47,40 +67,93 @@ const Title = styled.h5`
 const Description = styled.p`
  max-width: 100%;
  text-align: left;
+ margin-bottom: 15px;
+ color: ${theme.colors.darkLight};
+
 `
 
-const TechList = styled.ul`
+const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  list-style-type: none;
-  padding-left: 0;
+  align-items: center;
+`
 
-  li {
-    margin-right: 5px;
-    font-size: 12px;
-    color: ${theme.colors.blue};
+const ProjectLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+
+  ${media.largeUp} {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    margin-bottom: 0;
+    z-index: -1;
+    bottom: -18px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: ${theme.transition};
   }
 `
 
-const Project = ({ img, title, classes, description }) => {
+const ProjectLink = styled.a`
+
+  color: ${theme.colors.mayerPurple};
+  text-align: center;
+  padding: 12px 20px;
+
+  &:hover {
+    color: ${theme.colors.dark};
+  }
+
+
+  ${media.medium} {
+    width: 50%;
+    margin-left: 10px;
+    border: 1px solid ${theme.colors.mayerPurple};
+    border-radius: 5px;
+    white-space: nowrap;
+
+    &:hover {
+      opacity: .7;
+    }
+
+  }
+`
+
+
+const Project = ({ icon, title, classes, description, techList, codeLink, siteLink }) => {
+
+  const [packageCardHover, updatePackageCardHover] = useState(false)
 
   return (
-    <ProjectContainer className={classes}>
-      {img && <Img src={img} alt="" />}
-      <Separator>
-        <Title>{title}</Title>
-        <Description>
-          {description ? description : "A super cool game I created to practice using react."}
-        </Description>
-        <TechList>
-          <li>React</li>
-          <li>Gatsby</li>
-          <li>Netlify</li>
-          <li>Emotion</li>
-          <li>Google Analytics</li>
-        </TechList>
-      </Separator>
+    <ProjectContainer className={`${classes} ${packageCardHover ? 'hovered': ''}`}>
+      <ProjectInner
+        onMouseEnter={() => updatePackageCardHover(true)}
+        onMouseLeave={() => updatePackageCardHover(false)} >
+        <div>
+          <FlexRow>
+            <Icon src={icon} alt="" />
+            <Title>{title}</Title>
+          </FlexRow>
+          <Description dangerouslySetInnerHTML={{__html: description}} />
+        </div>
+        <ProjectLinks className='project-links'>
+            { siteLink &&
+              <ProjectLink className='first' href={siteLink} target='_blank'>
+                Visit Site &rsaquo;
+              </ProjectLink>
+            }
+            { codeLink &&
+              <ProjectLink href={codeLink} target='_blank'>
+                View Code &rsaquo;
+              </ProjectLink>
+            }
+          </ProjectLinks>
+        <TechList items={techList} />
+      </ProjectInner>
     </ProjectContainer>
   )
 }

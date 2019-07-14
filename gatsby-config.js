@@ -54,8 +54,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto Mono`,
-            variants: [`400`, `700`]
+            family: `Raleway`,
+            variants: [`300`, `500`, `600`]
           },
           {
             family: `Roboto`,
@@ -63,6 +63,12 @@ module.exports = {
           },
         ],
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-137604730-4"
+      },
+    },
   ],
 }

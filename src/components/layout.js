@@ -16,26 +16,12 @@ class Layout extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.changeTheme()
-  // }
-
-  // changeTheme = () => {
-  //   this.setState(prevState => ({
-  //     altColors: !prevState.altColors
-  //   }), () => {
-  //     setTimeout(() => {
-  //       this.changeTheme()
-  //     }, 2000)
-  //   })
-  // }
-
   render() {
     // console.log(theme.colors, theme.altColors)
     return (
       <main>
         <GlobalStyles colors={this.state.altColors ? theme.darkThemeColors : theme.darkThemeColors} />
-        {/* <Navigation /> */}
+        <Navigation />
         <SideItemsLeft />
         <SideItemsRight />
         {this.props.children}

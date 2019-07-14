@@ -25,10 +25,23 @@ const Experience = ({ data }) => {
       <Container>
         <Title>Experience.</Title>
         <ExperienceContainer>
-          <ExperienceItem title="Clearlink" dates="January 2018 &mdash;  Current" open={true} />
-          <ExperienceItem title="Calldrip" dates="June 2017 &mdash; January 2018" />
-          <ExperienceItem title="Hill Air Force Base" dates="January 2016 &mdash;  June 2017" />
-          <ExperienceItem title="Weber State University" dates="August 2015 &mdash;  January 2016" />
+          <ExperienceItem
+            title="Clearlink"
+            dates="January 2018 &mdash;  Current"
+            position="Front End Developer"
+            copy="At Clearlink we create create SEO driven websites to generate new customers for our brand partners. I work closely with SEO specialists, designers and marketers to create responsive sites."
+            open={true} />
+          <ExperienceItem
+            title="Calldrip"
+            dates="July 2017 &mdash; January 2018"
+            position="Software Developer"
+            copy="Calldrip is a small software company based in Utah. I functioned as a full stack developer helping them to improve and add features to their web-based customer lead generation software." />
+          <ExperienceItem
+            title="Hill Air Force Base"
+            dates="May 2016 &mdash;  July 2017"
+            position="Software Engineering Intern"
+            copy="I worked for the United States Airforce as a civilian during college. I was working for the software maintenance group working on f-16's" />
+          <ExperienceItem title="Weber State University" dates="December 2015 &mdash;  May 2016" />
         </ExperienceContainer>
       </Container>
     </Section>

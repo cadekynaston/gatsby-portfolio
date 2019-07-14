@@ -5,7 +5,6 @@ import Fade from 'react-reveal/Fade';
 import Layout from "../components/layout"
 import Header from "../components/header"
 import Image from "../components/image"
-import SEO from "../components/seo"
 import { theme } from '../styles'
 import Projects from '../components/projects';
 import Experience from '../components/experience';
@@ -16,11 +15,10 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <Layout>
-        <Header data={data.header.edges}/>
-        <Projects data={data.projects.edges}/>
-        <Experience data={data.projects.edges}/>
-        <Header data={data.header.edges}/>
-
+        <Header data={data.header.edges} />
+        <Projects data={data.projects.edges} />
+        <Experience data={data.projects.edges} />
+        {/* <Header data={data.header.edges} /> */}
       </Layout>
     </>
   )
@@ -47,11 +45,12 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            title
             name
             subtitle
             subitems
             contactText
+            copy
+            company
           }
           html
         }

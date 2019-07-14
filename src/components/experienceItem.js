@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react"
 import styled from "@emotion/styled"
 
 import { theme, media } from '../styles'
-import caret from '../images/caret-right.svg'
+import caret from '../images/caret.svg'
 import arrow from '../images/arrow.svg'
+import rewind from '../images/rewind.svg'
 
 const ExperienceContainer = styled.div`
+  background-color: ${theme.colors.darkBlueLighter};
   border: 1px solid ${theme.colors.gray};
   padding: 20px 40px 20px 20px;
   border-radius: 5px;
@@ -13,6 +15,7 @@ const ExperienceContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 900px;
+
   /* box-shadow: 0px 3px 10px rgba(48, 52, 63, .3); */
   &.open {
     .description {
@@ -21,7 +24,6 @@ const ExperienceContainer = styled.div`
 
     .first-row {
       &::after {
-        /* background-color: red; */
         transform: rotate(90deg);
       }
     }
@@ -44,7 +46,6 @@ const FirstRow = styled.div`
     position: absolute;
     color: ${theme.colors.light};
     right: -20px;
-    font-size: 30px;
     height: 20px;
     width: 20px;
     top: 0;
@@ -75,9 +76,14 @@ const Title = styled.h4`
  color: ${theme.colors.yellow};
  margin-right: 15px;
 `
-const Dates = styled.p`
- color: ${theme.colors.light};
 
+const Position = styled.p`
+  color: ${theme.colors.lightGray};
+`
+
+const Dates = styled.p`
+  margin-bottom: 12px;
+  color: ${theme.colors.purple};
 `
 
 const Copy = styled.p`
@@ -88,15 +94,32 @@ const Tech = styled.ul`
 
   columns: 2;
   max-width: 500px;
-  list-style-image: url('${caret}');
+  list-style-type: none;
+
   li {
     color: ${theme.colors.light};
     margin-bottom: 5px;
+    position: relative;
+
+    &::before {
+      content : '';
+      position: absolute;
+      color: ${theme.colors.light};
+      left: -17px;
+      height: 12px;
+      width: 12px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background-image: url('${rewind}');
+      background-size: 12px;
+      background-repeat: no-repeat;
+    }
   }
 
 `
 
-const Project = ({ dates, title, classes = '', open }) => {
+const Project = ({ dates, copy, position, title, classes = '', open }) => {
 
   const [isOpen, updateIsOpen] = useState(open);
 
@@ -110,10 +133,11 @@ const Project = ({ dates, title, classes = '', open }) => {
     <ExperienceContainer className={`${isOpen ? 'open' : ''} ${classes}`}>
       <FirstRow className='first-row' onClick={() => updateIsOpen(prev => !prev)}>
         <Title>{title}</Title>
-        <Dates>{dates}</Dates>
+        <Position>{position}</Position>
       </FirstRow>
       <SecondRow className='description'>
-        <Copy>At Clearlink we create create SEO driven websites to generate new customers for our brand partners. I work closely with SEO specialists, designers and marketers to create responsive sites.</Copy>
+        <Dates>{dates}</Dates>
+        <Copy>{copy}</Copy>
         <Tech>
           <li>Handlebars</li>
           <li>PHP</li>
