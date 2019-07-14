@@ -53,7 +53,7 @@ const FirstRow = styled.div`
     background-image: url('${arrow}');
     background-size: 20px;
     background-repeat: no-repeat;
-    transition: transform .2s ease-in-out;
+    transition: ${theme.transition};
   }
 
   ${media.small} {
@@ -68,21 +68,21 @@ const SecondRow = styled.div`
   display: none;
 `
 
-const Title = styled.h4`
- max-width: 100%;
- text-align: left;
- margin-bottom: 0;
- color: ${theme.colors.yellow};
- margin-right: 15px;
+const Position = styled.h4`
+  max-width: 100%;
+  text-align: left;
+  margin-bottom: 0;
+  color: ${theme.colors.lightGray};
 `
 
-const Position = styled.p`
-  color: ${theme.colors.lightGray};
+const Company = styled.h5`
+  margin-left: 15px;
+  color: ${theme.colors.yellow};
 `
 
 const Dates = styled.p`
   margin-bottom: 12px;
-  color: ${theme.colors.purple};
+  color: ${theme.colors.lightGray};
 `
 
 const Copy = styled.p`
@@ -118,21 +118,15 @@ const Tech = styled.ul`
 
 `
 
-const Project = ({ dates, copy, position, title, classes = '', open }) => {
+const Project = ({ dates, copy, position, company, classes = '', open }) => {
 
   const [isOpen, updateIsOpen] = useState(open);
-
-
-  // useEffect(() => {
-  //   console.log(isOpen)
-  // })
-
 
   return (
     <ExperienceContainer className={`${isOpen ? 'open' : ''} ${classes}`}>
       <FirstRow className='first-row' onClick={() => updateIsOpen(prev => !prev)}>
-        <Title>{title}</Title>
         <Position>{position}</Position>
+        <Company>{company}</Company>
       </FirstRow>
       <SecondRow className='description'>
         <Dates>{dates}</Dates>

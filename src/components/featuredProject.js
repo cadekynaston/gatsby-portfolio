@@ -79,7 +79,7 @@ const ProjectLink = styled.a`
   box-shadow: ${theme.boxShadow};
   transition: ${theme.transition};
 
-  :nth-child(2) {
+  :nth-of-type(2) {
     margin-left: 10px;
   }
 

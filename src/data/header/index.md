@@ -2,7 +2,7 @@
 name: Cade Kynaston. Software Developer at
 company: Clearlink.
 subtitle: Software Developer
-copy: Currently focused on improving my React + Javascript skills and adding to my portfolio.
+copy: Currently focused on improving my React + Javascript skills.
 subitems:
   - write code.
   - skateboard.

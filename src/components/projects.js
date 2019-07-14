@@ -65,8 +65,8 @@ const Projects = ({ data }) => {
             classes="feature-1 featured"
             img={reactConnect4}
             title="Connect 4 React"
-            description="This is one of my first react projects and it was the first project that I ever used state in. I just wanted to get a better feel for react and connect 4 is usually my go-to project for learning. "
-            techList={['React','Github Pages', 'React Color Picker', 'Google Analytics']}
+            description="My first site using state within React. When I learn a new language or library I usually create some version of Connect 4 to learn more about how the language works. In fact Connect 4 was the first website I ever created!"
+            techList={['React', 'Github Pages', 'React Color Picker', 'Google Analytics']}
             codeLink="https://github.com/cadekynaston/connect4-react"
             siteLink="https://cadekynaston.github.io/connect4-react/" />
 
@@ -74,7 +74,7 @@ const Projects = ({ data }) => {
             featured={true}
             img={dataLock}
             title="Calldrip"
-            description="While working at Calldrip I created a product called Dynamic Numbers which would dynamically show each new user to the site a different phone number for customer tracking and fine tuned targeting."
+            description="While working at Calldrip I helped create a product called Dynamic Numbers which would dynamically show each unique visitor to our clients website a unique phone number. Those phone numbers could then be tracked for precise customer tracking."
             techList={['PHP', 'MySQL', 'Google Cloud Platform', 'Bootstrap', 'Google Charts']}
             siteLink="https://www.calldrip.com/" />
 
@@ -82,7 +82,7 @@ const Projects = ({ data }) => {
             classes="project"
             icon={bruner}
             title="Bruner Dynamics"
-            description="My first site using gatsby and all of the awesome stuff gatsby can do including gatsby image, graphQL, and something."
+            description="My first Gatsby demo site. This site features GraphQL and gatsby-image."
             techList={['React', 'Gatsby', 'Netlify', 'Emotion', 'GraphQL']}
             codeLink="https://github.com/cadekynaston/gatsby-bruner-dynamics"
             siteLink="https://brunerdynamics.netlify.com/" />
@@ -91,7 +91,7 @@ const Projects = ({ data }) => {
             classes="project"
             icon={clearlink}
             title="Clearlink"
-            description="At Clearlink I've worked on a plethora of sites including <a href='https://www.usdish.com/' target='_blank'>USDISH</a>, <a href='https://www.yourlocalsecurity.com/' target='_blank'>Your Local Security</a>, and <a href='https://www.frontierbundles.com/' target='_blank'>Frontier Bundles</a>."
+            description="At Clearlink I've worked on an assortment of sites including <a href='https://www.usdish.com/' target='_blank'>USDISH</a>, <a href='https://www.yourlocalsecurity.com/' target='_blank'>Your Local Security</a>, and <a href='https://www.frontierbundles.com/' target='_blank'>Frontier Bundles</a>."
             techList={['PHP', 'Handlebars.js', 'Sketch', 'SCSS', 'Jira', 'GitHub']}
             siteLink="https://www.clearlink.com/"  />
 
@@ -99,7 +99,7 @@ const Projects = ({ data }) => {
             classes="project"
            icon={toys}
            title="Portfolio"
-           description="The previous iteration of my portfolio."
+           description="The previous iteration of my portfolio. My favorite thing about this website are the parallax section headings."
            techList={['Jquery', 'HTML5']}
            codeLink="https://github.com/cadekynaston/portfolio"
            siteLink="https://cadekynaston.github.io/portfolio/" />
@@ -107,7 +107,7 @@ const Projects = ({ data }) => {
           <Project classes="project"
             icon={firefly}
             title="You Would Not Believe Your Eyes"
-            description="A gatsby site I created to practice using google analytics."
+            description="A gatsby site I created as a joke and ended up learning some pretty cool stuff about google analytics. The person who made the YouTube video featured on the site put my name in the video description and that video has about 3 million views right now."
             techList={['React','Gatsby', 'Google Analytics', 'Netlify', 'React Particles']}
             codeLink="https://github.com/cadekynaston/you-would-not-believe-your-eyes"
             siteLink="https://youwouldnotbelieveyoureyes.com/"  />

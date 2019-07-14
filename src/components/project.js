@@ -110,18 +110,21 @@ const ProjectLink = styled.a`
 
   ${media.medium} {
     width: 50%;
-    border: 1px solid ${theme.colors.mayerPurple};
     border-radius: 5px;
+    background-color: ${theme.colors.mayerPurple};
+    color: ${theme.colors.light};
     white-space: nowrap;
+    box-shadow: ${theme.boxShadow};
+    transition: ${theme.transition};
 
-    :nth-child(2) {
+    :nth-of-type(2) {
       margin-left: 10px;
     }
 
     &:hover {
-      /* color: ${theme.colors.mayerPurple}; */
-      background-color: ${theme.colors.mayerPurple};
       color: ${theme.colors.light};
+      box-shadow: ${theme.boxShadowHover};
+
     }
 
   }
@@ -144,19 +147,21 @@ const Project = ({ icon, title, classes, description, techList, codeLink, siteLi
           </FlexRow>
           <Description dangerouslySetInnerHTML={{__html: description}} />
         </div>
-        <ProjectLinks className='project-links'>
-            { siteLink &&
-              <ProjectLink className='first' href={siteLink} target='_blank'>
-                Visit Site &rsaquo;
-              </ProjectLink>
-            }
-            { codeLink &&
-              <ProjectLink href={codeLink} target='_blank'>
-                View Code &rsaquo;
-              </ProjectLink>
-            }
-          </ProjectLinks>
-        <TechList items={techList} />
+        <div>
+          <ProjectLinks className='project-links'>
+              { siteLink &&
+                <ProjectLink className='first' href={siteLink} target='_blank'>
+                  Visit Site &rsaquo;
+                </ProjectLink>
+              }
+              { codeLink &&
+                <ProjectLink href={codeLink} target='_blank'>
+                  View Code &rsaquo;
+                </ProjectLink>
+              }
+            </ProjectLinks>
+          <TechList items={techList} />
+        </div>
       </ProjectInner>
     </ProjectContainer>
   )
