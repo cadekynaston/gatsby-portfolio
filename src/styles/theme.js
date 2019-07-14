@@ -33,7 +33,8 @@ const theme = {
     buff: '#F2D492',
   },
 
-  boxShadow: '0px 3px 10px rgba(48, 52, 63, .3);',
+  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+  boxShadowHover: '0 10px 20px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.22)',
 
   easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
   transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',

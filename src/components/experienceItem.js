@@ -16,7 +16,6 @@ const ExperienceContainer = styled.div`
   flex-direction: column;
   max-width: 900px;
 
-  /* box-shadow: 0px 3px 10px rgba(48, 52, 63, .3); */
   &.open {
     .description {
       display: block;

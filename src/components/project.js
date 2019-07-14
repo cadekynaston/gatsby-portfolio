@@ -15,7 +15,7 @@ const ProjectInner = styled.div`
   justify-content: space-between;
   height: 100%;
   padding: 20px;
-  box-shadow: 0px 3px 10px rgba(48, 52, 63, .3);
+  box-shadow: ${theme.boxShadow};
   border-radius: 5px;
 
 
@@ -40,8 +40,7 @@ const ProjectContainer = styled.div`
   ${media.largeUp} {
     &.hovered {
       transform: translateY(-25px);
-      box-shadow: 0 2px 4px ${theme.colors.lightGray};
-      box-shadow: 0 19px 38px ${theme.colors.lightGray} 0 15px 12px ${theme.colors.lightGray};
+
       .project-links {
         transform: translateY(25px);
         opacity: 1;
@@ -103,21 +102,26 @@ const ProjectLink = styled.a`
   color: ${theme.colors.mayerPurple};
   text-align: center;
   padding: 12px 20px;
+  flex-grow: 1;
 
   &:hover {
     color: ${theme.colors.dark};
   }
 
-
   ${media.medium} {
     width: 50%;
-    margin-left: 10px;
     border: 1px solid ${theme.colors.mayerPurple};
     border-radius: 5px;
     white-space: nowrap;
 
+    :nth-child(2) {
+      margin-left: 10px;
+    }
+
     &:hover {
-      opacity: .7;
+      /* color: ${theme.colors.mayerPurple}; */
+      background-color: ${theme.colors.mayerPurple};
+      color: ${theme.colors.light};
     }
 
   }
