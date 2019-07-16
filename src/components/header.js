@@ -85,6 +85,4 @@ const Header = ({ data, bgColor }) => {
 
 }
 
-
-
 export default Header

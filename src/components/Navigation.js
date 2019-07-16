@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
 import Headroom from 'react-headroom';
-import { GlobalStyles, theme } from '../styles'
+import { theme } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
 
 const Nav = styled.nav`
@@ -16,8 +16,6 @@ const Nav = styled.nav`
   left: 0px;
   right: 0px;
   z-index: 1;
-
-  /* transition: background-color; */
 
   &.top {
 
@@ -46,31 +44,109 @@ const NavLogo = styled.img`
   width: 30px;
 `
 
-const NavUl = styled.ul`
+const MobileNavContainer = styled.div`
+  /* display: none; */
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,.3);
+  position: fixed;
+  z-index: 10;
+
+  &.open {
+    display: flex;
+  }
+`
+
+const MobileNav = styled.div`
+
   display: flex;
-  flex-direction: row;
-  list-style-type: none;
+  flex-direction: column;
+  align-items: flex-end;
+  max-height: 500px;
+  width: 100vw;
+  transform: translateY(-100vh);
+  background-color: ${theme.colors.light};
+  padding: 100px;
+  opacity: 1;
+  z-index: 10000;
+  transition: ${theme.transition};
+  transition-delay: .5s;
+
+  &.open {
+    transform: translateY(0);
+    transition-delay: 0s;
+
+    p {
+      opacity: 1;
+    }
+  }
+
+  p {
+    color: ${theme.colors.dark};
+    font-size: 40px;
+    margin-top: 15px;
+    transition: ${theme.transition};
+    opacity: 0;
+    transition-delay: .2s;
+  }
+
 `
 
-const NavLi = styled.li`
-  margin-left: 20px;
-`
+const NavButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
 
-const NavLink = styled.a`
-  color: ${theme.colors.light};
+  > div {
+    transition: ${theme.transition};
+    background-color: ${theme.colors.light};
+
+    &:first-of-type {
+      width: 100%;
+      height: 2px;
+      margin-bottom: 10px;
+    }
+
+    &:nth-of-type(2) {
+      width: 50%;
+      height: 2px;
+      align-self: flex-end;
+
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    > div {
+      &:first-of-type {
+        align-self: flex-start;
+        width: 50%;
+      }
+
+      &:nth-of-type(2) {
+        width: 100%;
+      }
+    }
+  }
+
+  &.open {
+    > div {
+      background-color: ${theme.colors.dark};
+    }
+  }
 `
 
 const Navigation = () => {
 
-  const [scrolledTop, updateScrolledTop] = useState(true);
-  const [scrollHeight, updateScrollHeight] = useState(0);
-  const [lastScrollPosition, updateLastScrollPosition] = useState(10);
-  const [scrollingUp, updateScrollingUp] = useState(false);
+  const [scrolledTop, updateScrolledTop] = useState(true)
+  const [scrollHeight, updateScrollHeight] = useState(0)
+  const [openNav, updateOpenNav] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
-    // component will unmount
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -84,19 +160,30 @@ const Navigation = () => {
   }
 
   return (
+    <>
     <NavHeadroom scrollHeight={scrollHeight}>
       <Headroom>
         <Nav className={`${scrolledTop ? 'scrolled': 'top'}`}>
           <NavLogo src={gatsbyLogo} />
-          <NavUl>
-            <NavLi><NavLink href="#">Experience</NavLink></NavLi>
-            <NavLi><NavLink href="#">Projects</NavLink></NavLi>
-            <NavLi><NavLink href="#">Contact</NavLink></NavLi>
-            <NavLi><NavLink href="#">Resume</NavLink></NavLi>
-          </NavUl>
+          <NavButton
+            onClick={() => updateOpenNav(prevState => !prevState)}
+            className={`${openNav ? 'open' : 'closed'}`} >
+            <div></div>
+            <div></div>
+          </NavButton>
         </Nav>
+
       </Headroom>
     </NavHeadroom>
+    <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
+      <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
+        <p style={{ transitionDelay: '200ms' }}>Experience</p>
+        <p style={{ transitionDelay: '250ms' }}>Projects</p>
+        <p style={{ transitionDelay: '300ms' }}>Contact</p>
+        <p style={{ transitionDelay: '350ms' }}>Resume</p>
+      </MobileNav>
+    </MobileNavContainer>
+  </>
   )
 
 }
