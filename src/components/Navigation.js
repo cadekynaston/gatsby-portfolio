@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
 import Headroom from 'react-headroom';
-import { GlobalStyles, theme } from '../styles'
+import { theme } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
 
 const Nav = styled.nav`
@@ -44,20 +44,6 @@ const NavLogo = styled.img`
   width: 30px;
 `
 
-const NavUl = styled.ul`
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-`
-
-const NavLi = styled.li`
-  margin-left: 20px;
-`
-
-const NavLink = styled.a`
-  color: ${theme.colors.light};
-`
-
 const MobileNavContainer = styled.div`
   /* display: none; */
   height: 100vh;
@@ -90,12 +76,12 @@ const MobileNav = styled.div`
     transform: translateY(0);
     transition-delay: 0s;
 
-    a {
+    p {
       opacity: 1;
     }
   }
 
-  a {
+  p {
     color: ${theme.colors.dark};
     font-size: 40px;
     margin-top: 15px;
@@ -154,9 +140,9 @@ const NavButton = styled.div`
 
 const Navigation = () => {
 
-  const [scrolledTop, updateScrolledTop] = useState(true);
-  const [scrollHeight, updateScrollHeight] = useState(0);
-  const [openNav, updateOpenNav] = useState(false);
+  const [scrolledTop, updateScrolledTop] = useState(true)
+  const [scrollHeight, updateScrollHeight] = useState(0)
+  const [openNav, updateOpenNav] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -179,12 +165,6 @@ const Navigation = () => {
       <Headroom>
         <Nav className={`${scrolledTop ? 'scrolled': 'top'}`}>
           <NavLogo src={gatsbyLogo} />
-          {/* <NavUl>
-            <NavLi><NavLink href="#">Experience</NavLink></NavLi>
-            <NavLi><NavLink href="#">Projects</NavLink></NavLi>
-            <NavLi><NavLink href="#">Contact</NavLink></NavLi>
-            <NavLi><NavLink href="#">Resume</NavLink></NavLi>
-          </NavUl> */}
           <NavButton
             onClick={() => updateOpenNav(prevState => !prevState)}
             className={`${openNav ? 'open' : 'closed'}`} >
@@ -197,10 +177,10 @@ const Navigation = () => {
     </NavHeadroom>
     <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
       <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
-        <a href="" style={{ transitionDelay: '200ms' }}>Experience</a>
-        <a href="" style={{ transitionDelay: '250ms' }}>Projects</a>
-        <a href="" style={{ transitionDelay: '300ms' }}>Contact</a>
-        <a href="" style={{ transitionDelay: '350ms' }}>Resume</a>
+        <p style={{ transitionDelay: '200ms' }}>Experience</p>
+        <p style={{ transitionDelay: '250ms' }}>Projects</p>
+        <p style={{ transitionDelay: '300ms' }}>Contact</p>
+        <p style={{ transitionDelay: '350ms' }}>Resume</p>
       </MobileNav>
     </MobileNavContainer>
   </>
