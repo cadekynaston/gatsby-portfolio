@@ -34,11 +34,11 @@ const HeaderCopy = styled.h5`
 `
 
 const HeaderLink = styled.a`
-  color: ${theme.colors.clearlinkBlue};
+  color: ${theme.colors.dark};
   text-shadow: -1px -1px 0 ${theme.colors.light}, 1px -1px 0 ${theme.colors.light}, -1px 1px 0 ${theme.colors.light}, 1px 1px 0 ${theme.colors.light};
 
   &:hover {
-    text-shadow: unset;
+    color: ${theme.colors.clearlinkBlue};
     cursor: pointer;
   }
 `
