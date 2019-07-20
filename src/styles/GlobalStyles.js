@@ -8,6 +8,10 @@ const GlobalStyles = ({ colors }) => {
     <Global
     styles={css`
 
+      html {
+        background-color: ${theme.colors.dark};
+      }
+
       h1 {
         font-size: 60px;
         line-height: 62px;
