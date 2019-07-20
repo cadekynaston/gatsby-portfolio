@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Element } from 'react-scroll'
 
 import Project from './project'
 import { Container, Section, theme, media } from '../styles'
+
 
 import bruner from '../images/bruner-logo.svg'
 import FeaturedProject from './featuredProject';
@@ -57,6 +59,7 @@ const Projects = ({ data }) => {
 
   return (
     <Section bgColor={theme.colors.light}>
+      <Element name="projects" />
       <Container>
         <Title>Projects.</Title>
         <ProjectGrid>

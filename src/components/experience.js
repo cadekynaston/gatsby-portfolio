@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { Element } from 'react-scroll'
 
 import ExperienceItem from './experienceItem'
 import { Container, Section, theme, media } from '../styles'
+
 
 
 const Title = styled.h2`
@@ -22,6 +24,7 @@ const Experience = ({ data }) => {
 
   return (
     <Section bgColor={theme.colors.darkBlue}>
+      <Element name="experience" />
       <Container>
         <Title>Experience.</Title>
         <ExperienceContainer>

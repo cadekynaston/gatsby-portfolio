@@ -1,41 +1,36 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
-import Headroom from 'react-headroom';
 import { theme } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 const Nav = styled.nav`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 75px;
+  height: 70px;
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
   top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 1;
-
-  &.top {
-
-    background-color: ${theme.colors.light};
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 4px 10px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    a {
-      color: ${theme.colors.dark};
-    }
-  }
 `
 
-const NavHeadroom = styled.div`
+const NavContainer = styled.div`
   position: fixed;
   width: 100%;
   z-index: 100;
+  transition: ${theme.transition};
+  box-shadow: ${theme.boxShadow};
 
-  top: -${props => props.scrollHeight}px;
+  &.scrolled {
+    background-color: ${theme.colors.light};
+  }
 
-  .headroom-wrapper {
-    width: 100%;
+  &.top {
+    background-color: ${theme.colors.dark};
+    box-shadow: none;
   }
 `
 
@@ -45,20 +40,32 @@ const NavLogo = styled.img`
 `
 
 const MobileNavContainer = styled.div`
-  /* display: none; */
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0,0,0,.3);
   position: fixed;
-  z-index: 10;
 
-  &.open {
-    display: flex;
+  &.closed {
+    visibility: hidden;
   }
 `
 
-const MobileNav = styled.div`
+const MobileNavOverlay = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: rgba(0,0,0,.3);
+  opacity: 0;
+  z-index: -1;
+  transition: ${theme.transition};
+  transition-delay: .3s;
 
+  &.open {
+    opacity: 1;
+    transition-delay: 0s;
+  }
+
+`
+
+const MobileNav = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -70,26 +77,29 @@ const MobileNav = styled.div`
   opacity: 1;
   z-index: 10000;
   transition: ${theme.transition};
-  transition-delay: .5s;
+  box-shadow: ${theme.boxShadow};
+  transition-delay: .4s;
 
   &.open {
     transform: translateY(0);
     transition-delay: 0s;
 
-    p {
+    .nav-link {
       opacity: 1;
     }
   }
 
-  p {
+  .nav-link {
     color: ${theme.colors.dark};
     font-size: 40px;
     margin-top: 15px;
     transition: ${theme.transition};
     opacity: 0;
-    transition-delay: .2s;
-  }
 
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `
 
 const NavButton = styled.div`
@@ -100,7 +110,7 @@ const NavButton = styled.div`
   width: 30px;
 
   > div {
-    transition: ${theme.transition};
+    transition: background-color ${theme.specificTransition} .3s, width ${theme.specificTransition} 0s;
     background-color: ${theme.colors.light};
 
     &:first-of-type {
@@ -131,9 +141,11 @@ const NavButton = styled.div`
     }
   }
 
+  &.scrolled,
   &.open {
     > div {
       background-color: ${theme.colors.dark};
+      transition-delay: 0s;
     }
   }
 `
@@ -146,44 +158,47 @@ const Navigation = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    Events.scrollEvent.register('begin', () => {
+      updateOpenNav(false)
+    });
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
-  const handleScroll = e => {
+  const handleScroll = () => {
+
+
     if (window.pageYOffset < 100) {
       updateScrollHeight(window.pageYOffset);
     }
-    updateScrolledTop(window.pageYOffset < 80);
+    updateScrolledTop(window.pageYOffset < 100);
   }
 
   return (
-    <>
-    <NavHeadroom scrollHeight={scrollHeight}>
-      <Headroom>
-        <Nav className={`${scrolledTop ? 'scrolled': 'top'}`}>
-          <NavLogo src={gatsbyLogo} />
-          <NavButton
-            onClick={() => updateOpenNav(prevState => !prevState)}
-            className={`${openNav ? 'open' : 'closed'}`} >
-            <div></div>
-            <div></div>
-          </NavButton>
-        </Nav>
+    <NavContainer className={`${scrolledTop ? 'top' : 'scrolled'} ${openNav ? 'open' : 'closed'}`}
+    scrollHeight={scrollHeight}>
+        <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
+          <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
+            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
+            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
+            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
+            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Resume</Link>
+          </MobileNav>
 
-      </Headroom>
-    </NavHeadroom>
-    <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
-      <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
-        <p style={{ transitionDelay: '200ms' }}>Experience</p>
-        <p style={{ transitionDelay: '250ms' }}>Projects</p>
-        <p style={{ transitionDelay: '300ms' }}>Contact</p>
-        <p style={{ transitionDelay: '350ms' }}>Resume</p>
-      </MobileNav>
-    </MobileNavContainer>
-  </>
+        <MobileNavOverlay className={`${openNav ? 'open' : 'closed'}`} />
+      </MobileNavContainer>
+      <Nav className={`${scrolledTop ? 'top' : 'scrolled'}`}>
+        <NavLogo src={gatsbyLogo} />
+        <NavButton
+          onClick={() => updateOpenNav(prevState => !prevState)}
+          className={`${openNav ? 'open' : 'closed'} ${scrolledTop ? 'top' : 'scrolled'}`} >
+          <div></div>
+          <div></div>
+        </NavButton>
+      </Nav>
+    </NavContainer>
   )
 
 }

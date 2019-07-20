@@ -27,6 +27,7 @@
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.0",
     "react-reveal": "^1.2.2",
+    "react-scroll": "^1.7.12",
     "react-transition-group": "^4.0.1"
   },
   "devDependencies": {
