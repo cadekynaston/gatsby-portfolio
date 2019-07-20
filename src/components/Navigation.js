@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
-import { theme } from '../styles'
+import { theme, media } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -15,6 +15,11 @@ const Nav = styled.nav`
   padding-left: 40px;
   padding-right: 40px;
   top: 0px;
+
+  ${media.medium} {
+    padding-left: .975rem;
+    padding-right: .975rem;
+  }
 `
 
 const NavContainer = styled.div`
@@ -73,7 +78,10 @@ const MobileNav = styled.div`
   width: 100vw;
   transform: translateY(-100vh);
   background-color: ${theme.colors.light};
-  padding: 100px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: .975rem;
+  padding-right: .975rem;
   opacity: 1;
   z-index: 10000;
   transition: ${theme.transition};
@@ -95,6 +103,10 @@ const MobileNav = styled.div`
     margin-top: 15px;
     transition: ${theme.transition};
     opacity: 0;
+
+    ${media.medium} {
+      font-size: 30px;
+    }
 
     &:hover {
       cursor: pointer;

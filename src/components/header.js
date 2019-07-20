@@ -23,14 +23,18 @@ const Head = styled.header`
 `;
 
 const HeaderText = styled.h1`
-  max-width: 900px;
   margin-bottom: 10px;
+  max-width: 900px;
 `
 
 const HeaderCopy = styled.h5`
   font-size: 20px;
   color: ${theme.colors.lightGray};
   max-width: 900px;
+
+  ${media.medium} {
+    font-size: 16px;
+  }
 `
 
 const HeaderLink = styled.a`
