@@ -25,6 +25,13 @@ const Head = styled.header`
 const HeaderText = styled.h1`
   margin-bottom: 10px;
   max-width: 900px;
+  ${media.medium} {
+    max-width: 700px;
+  }
+
+  ${media.small} {
+    max-width: 500px;
+  }
 `
 
 const HeaderCopy = styled.h5`
