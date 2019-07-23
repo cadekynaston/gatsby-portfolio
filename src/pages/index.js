@@ -8,6 +8,8 @@ import Image from "../components/image"
 import { theme } from '../styles'
 import Projects from '../components/projects';
 import Experience from '../components/experience';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 
 const IndexPage = ({ data }) => {
@@ -18,6 +20,9 @@ const IndexPage = ({ data }) => {
         <Header data={data.header.edges} />
         <Projects data={data.projects.edges} />
         <Experience data={data.projects.edges} />
+        <Contact data={data.projects.edges} />
+        <Footer data={data.header.edges} />
+
         {/* <Header data={data.header.edges} /> */}
       </Layout>
     </>

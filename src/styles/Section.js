@@ -3,8 +3,8 @@ import media from './media';
 
 const Row = styled.section`
   width: 100%;
-  padding-left: .975rem;
-  padding-right: .975rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: ${props => props.bgColor ? props.bgColor : 'white' };
 
   ${media.largeUp} {

@@ -10,15 +10,15 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  height: 65px;
   width: 100%;
   padding-left: 40px;
   padding-right: 40px;
   top: 0px;
 
   ${media.medium} {
-    padding-left: .975rem;
-    padding-right: .975rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 `
 
@@ -80,8 +80,8 @@ const MobileNav = styled.div`
   background-color: ${theme.colors.light};
   padding-top: 100px;
   padding-bottom: 100px;
-  padding-left: .975rem;
-  padding-right: .975rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   opacity: 1;
   z-index: 10000;
   transition: ${theme.transition};
@@ -98,10 +98,11 @@ const MobileNav = styled.div`
   }
 
   .nav-link {
-    color: ${theme.colors.dark};
-    font-size: 40px;
+    color: ${theme.colors.light};
+    text-shadow: -1px -1px 0 ${theme.colors.dark}, 1px -1px 0 ${theme.colors.dark}, -1px 1px 0 ${theme.colors.dark}, 1px 1px 0 ${theme.colors.dark};
+    font-size: 44px;
     margin-top: 15px;
-    transition: ${theme.transition};
+    transition: opacity ${theme.specificTransition};
     opacity: 0;
 
     ${media.medium} {
@@ -109,6 +110,7 @@ const MobileNav = styled.div`
     }
 
     &:hover {
+      color: ${theme.colors.mayerPurple};
       cursor: pointer;
     }
   }
@@ -195,11 +197,11 @@ const Navigation = () => {
           <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
             <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
             <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
-            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
+            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
             <Link className="nav-link" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Resume</Link>
           </MobileNav>
 
-        <MobileNavOverlay className={`${openNav ? 'open' : 'closed'}`} />
+        <MobileNavOverlay onClick={() => updateOpenNav(false)} className={`${openNav ? 'open' : 'closed'}`} />
       </MobileNavContainer>
       <Nav className={`${scrolledTop ? 'top' : 'scrolled'}`}>
         <NavLogo src={gatsbyLogo} />

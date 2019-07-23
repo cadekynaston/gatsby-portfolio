@@ -134,7 +134,6 @@ const ProjectLink = styled.a`
     &:hover {
       color: ${theme.colors.light};
       box-shadow: ${theme.boxShadowHover};
-
     }
 
   }

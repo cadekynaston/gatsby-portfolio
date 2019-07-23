@@ -27,8 +27,8 @@ const GlobalStyles = ({ colors }) => {
         }
 
         ${media.small} {
-          font-size: 30px;
-          line-height: 32px;
+          font-size: 34px;
+          line-height: 36px;
         }
       }
 
@@ -48,8 +48,8 @@ const GlobalStyles = ({ colors }) => {
         }
 
         ${media.small} {
-          font-size: 28px;
-          line-height: 30px;
+          font-size: 32px;
+          line-height: 34px;
         }
 
       }
@@ -68,8 +68,8 @@ const GlobalStyles = ({ colors }) => {
         }
 
         ${media.small} {
-          font-size: 24px;
-          line-height: 26px;
+          font-size: 26px;
+          line-height: 28px;
         }
 
         &.heavy {
@@ -82,8 +82,8 @@ const GlobalStyles = ({ colors }) => {
       }
 
       h4 {
-        font-size: 22px;
-        line-height: 26px;
+        font-size: 24px;
+        line-height: 28px;
         color: ${theme.colors.darkLight};
         font-family: ${theme.fonts.Roboto};
         font-weight: 400;

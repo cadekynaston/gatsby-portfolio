@@ -13,8 +13,8 @@ const Head = styled.header`
   justify-content: flex-start;
   align-items: center;
   background-color: ${props => props.bgColor ? props.bgColor : theme.colors.dark };
-  padding-left: .975rem;
-  padding-right: .975rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
   ${media.largeUp} {
     padding-left: 100px;
