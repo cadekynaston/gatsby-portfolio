@@ -106,7 +106,8 @@ const Projects = ({ data }) => {
           <div>
             <Title>Get in Touch.</Title>
             <h4>I'd love to hear from you if you have any questions or if you just feel like saying hi!</h4>
-            <StyledForm name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="Contact Form" />
               <div>
                 <label>Name</label><input type="text" name="name" placeholder="Name" />
               </div>
