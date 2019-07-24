@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
 
@@ -11,7 +11,6 @@ import FeaturedProject from './featuredProject';
 import firefly from '../images/firefly.png'
 import clearlink from '../images/clearlink.jpeg'
 import toys from '../images/toys.svg'
-import dataLock from '../images/data-lock.svg'
 
 
 const Title = styled.h2`
@@ -49,12 +48,31 @@ const ProjectGrid = styled.div`
       grid-row: 3/5;
     }
   }
-
 `
+
+// const ViewMoreProjects = styled.div`
+//   background-color: ${theme.colors.mayerPurple};
+//   color: ${theme.colors.light};
+//   text-align: center;
+//   padding: 12px 20px;
+//   border-radius: 5px;
+//   width: 350px;
+//   margin-top: 30px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   box-shadow: ${theme.boxShadow};
+//   transition: ${theme.transition};
+//   &:hover {
+//     cursor: pointer;
+//     box-shadow: ${theme.boxShadowHover};
+//   }
+
+// `
 
 const Projects = ({ data }) => {
 
-  const { frontmatter, html } = data[0].node;
+  // const [seeMoreProjects, updateSeeMoreProjects] = useState(false)
+  const { frontmatter, html } = data[0].node
 
   return (
     <Section bgColor={theme.colors.light}>
@@ -71,14 +89,6 @@ const Projects = ({ data }) => {
             techList={['React', 'Github Pages', 'React Color Picker', 'Google Analytics']}
             codeLink="https://github.com/cadekynaston/connect4-react"
             siteLink="https://cadekynaston.github.io/connect4-react/" />
-
-          <FeaturedProject classes="feature-2 featured"
-            featured={true}
-            img="chart.png"
-            title="Calldrip"
-            description="While working at Calldrip I helped create a product called Dynamic Numbers which would dynamically show each unique visitor to our clients website a unique phone number. Those phone numbers could then be tracked for precise customer tracking."
-            techList={['PHP', 'MySQL', 'Google Cloud Platform', 'Bootstrap', 'Google Charts']}
-            siteLink="https://www.calldrip.com/" />
 
           <Project
             classes="project"
@@ -97,14 +107,25 @@ const Projects = ({ data }) => {
             techList={['PHP', 'Handlebars.js', 'Sketch', 'SCSS', 'Jira', 'GitHub']}
             siteLink="https://www.clearlink.com/"  />
 
+          {/* { seeMoreProjects && */}
+            <FeaturedProject classes="feature-2 featured"
+              featured={true}
+              img="phone.png"
+              title="Calldrip"
+              description="While working at Calldrip I helped create a product called Dynamic Numbers which would dynamically show each unique visitor to our clients website a unique phone number. Those phone numbers could then be tracked for precise customer tracking."
+              techList={['PHP', 'MySQL', 'Google Cloud Platform', 'Bootstrap', 'Google Charts']}
+              siteLink="https://www.calldrip.com/" />
+
+
           <Project
             classes="project"
-           icon={toys}
-           title="Portfolio"
-           description="The previous iteration of my portfolio. My favorite thing about this website is the parallax section headings."
-           techList={['Jquery', 'HTML5']}
-           codeLink="https://github.com/cadekynaston/portfolio"
-           siteLink="https://cadekynaston.github.io/portfolio/" />
+            icon={toys}
+            title="Portfolio"
+            description="The previous iteration of my portfolio. My favorite thing about this website is the parallax section headings."
+            techList={['Jquery', 'HTML5']}
+            codeLink="https://github.com/cadekynaston/portfolio"
+            siteLink="https://cadekynaston.github.io/portfolio/" />
+
 
           <Project classes="project"
             icon={firefly}
@@ -115,6 +136,7 @@ const Projects = ({ data }) => {
             siteLink="https://youwouldnotbelieveyoureyes.com/"  />
 
         </ProjectGrid>
+        {/* <ViewMoreProjects onClick={() => updateSeeMoreProjects(prevState => !prevState)}>See More</ViewMoreProjects> */}
       </Container>
     </Section>
   )
