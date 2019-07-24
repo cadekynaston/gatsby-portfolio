@@ -5,34 +5,20 @@ import { GlobalStyles, theme } from '../styles'
 import Navigation from './Navigation';
 import SideItemsLeft from './SideItemsLeft'
 import SideItemsRight from './SideItemsRight'
+import SEO from '../components/seo';
 
-class Layout extends React.Component {
-
-  constructor() {
-    super()
-
-    this.state = {
-      altColors: false,
-    }
-  }
-
-  render() {
-    // console.log(theme.colors, theme.altColors)
-    return (
-      <main>
-        <GlobalStyles colors={this.state.altColors ? theme.darkThemeColors : theme.darkThemeColors} />
-        <Navigation />
-        <SideItemsLeft />
-        <SideItemsRight />
-        {this.props.children}
-      </main>
-    )
-  }
+const Layout = ({ children }) => {
+  return (
+    <main>
+      <SEO />
+      <GlobalStyles />
+      <Navigation />
+      <SideItemsLeft />
+      <SideItemsRight />
+      {children}
+    </main>
+  )
 }
-
-  // theme https://coolors.co/30343f-fafaff-e4d9ff-273469-1e2749
-  // alt theme https://coolors.co/ffe74c-ff5964-ffffff-38618c-35a7ff
-  // https://coolors.co/272727-fed766-ffffff-009fb7-696773
 
 
 Layout.propTypes = {

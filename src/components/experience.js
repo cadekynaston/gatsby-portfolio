@@ -9,8 +9,6 @@ import { Container, Section, theme, media } from '../styles'
 
 const Title = styled.h2`
   color: ${theme.colors.light};
-  /* text-shadow: -1px -1px 0 ${theme.colors.light}, 1px -1px 0 ${theme.colors.light}, -1px 1px 0 ${theme.colors.light}, 1px 1px 0 ${theme.colors.light}; */
-
   margin-bottom: 45px;
 `;
 

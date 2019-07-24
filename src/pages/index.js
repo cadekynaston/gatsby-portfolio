@@ -4,8 +4,6 @@ import Fade from 'react-reveal/Fade';
 
 import Layout from "../components/layout"
 import Header from "../components/header"
-import Image from "../components/image"
-import { theme } from '../styles'
 import Projects from '../components/projects';
 import Experience from '../components/experience';
 import Contact from '../components/contact';

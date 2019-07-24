@@ -49,9 +49,7 @@ const SideItemsLeft = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    console.log('effect')
     setTimeout(() => {
-      console.log('timeout')
       setIsMounted(true) }, 1800);
   });
 

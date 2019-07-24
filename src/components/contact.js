@@ -6,8 +6,7 @@ import { Container, Section, theme, media } from '../styles'
 import message from '../images/message.svg'
 
 const Title = styled.h2`
-  color: ${theme.colors.light};
-  text-shadow: -2px -2px 0 ${theme.colors.dark}, 1px -1px 0 ${theme.colors.dark}, -1px 1px 0 ${theme.colors.dark}, 1px 1px 0 ${theme.colors.dark};
+  color: ${theme.colors.dark};
   margin-bottom: 25px;
 `;
 

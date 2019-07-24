@@ -2,8 +2,7 @@ import React from 'react'
 import { Global, css } from '@emotion/core'
 import { theme, media } from '../styles'
 
-const GlobalStyles = ({ colors }) => {
-  // console.log(colors)
+const GlobalStyles = () => {
   return (
     <Global
     styles={css`

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Cade Kynaston Portfolio, Gatsby 2019`,
-    description: `Cade Kynaston Web Developer Portfolio 2019 Using React, Gatsby, Styled Components`,
+    title: `Cade Kynaston - Software Developer`,
+    description: `Cade Kynaston is a software developer based in Salt Lake City, Utah.`,
     author: `@cadekynaston`,
   },
   plugins: [
