@@ -11,7 +11,6 @@ import FeaturedProject from './featuredProject';
 import firefly from '../images/firefly.png'
 import clearlink from '../images/clearlink.jpeg'
 import toys from '../images/toys.svg'
-import reactConnect4 from '../images/react-connect-4.png'
 import dataLock from '../images/data-lock.svg'
 
 
@@ -66,7 +65,7 @@ const Projects = ({ data }) => {
 
           <FeaturedProject
             classes="feature-1 featured"
-            img={reactConnect4}
+            img="react-connect-4.png"
             title="Connect 4 React"
             description="My first site using state within React. When I learn a new language or library I usually create some version of Connect 4 to learn more about how the language works. In fact Connect 4 was the first website I ever created!"
             techList={['React', 'Github Pages', 'React Color Picker', 'Google Analytics']}
@@ -75,7 +74,7 @@ const Projects = ({ data }) => {
 
           <FeaturedProject classes="feature-2 featured"
             featured={true}
-            img={dataLock}
+            img="chart.png"
             title="Calldrip"
             description="While working at Calldrip I helped create a product called Dynamic Numbers which would dynamically show each unique visitor to our clients website a unique phone number. Those phone numbers could then be tracked for precise customer tracking."
             techList={['PHP', 'MySQL', 'Google Cloud Platform', 'Bootstrap', 'Google Charts']}

@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
 
 import { Container, Section, theme, media } from '../styles'
-import message from '../images/message.svg'
+import Image from './image'
 
 const Title = styled.h2`
   color: ${theme.colors.dark};
@@ -15,16 +15,16 @@ const Copy = styled.h5`
   font-size: 22px;
 `
 
-const ContactImage = styled.img`
+// const ContactImage = styled(Image)`
 
-  width: 90%;
+//   width: 90%;
 
-  ${media.mediumUp} {
-    padding-left: 20px;
-    max-width: 40%;
-    max-height: 400px;
-  }
-`
+//   ${media.mediumUp} {
+//     padding-left: 20px;
+//     max-width: 40%;
+//     max-height: 400px;
+//   }
+// `
 
 const FlexRow = styled.div`
   display: flex;
@@ -40,6 +40,10 @@ const FlexRow = styled.div`
   ${media.small} {
     flex-direction: column;
   }
+`
+
+const ImageContainer = styled.div`
+  width: 100%;
 `
 
 const StyledForm = styled.form`
@@ -125,7 +129,9 @@ const Projects = ({ data }) => {
               </div>
             </StyledForm>
           </div>
-          <ContactImage src={message} alt="" />
+          <ImageContainer>
+            <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
+          </ImageContainer>
         </FlexRow>
       </Container>
     </Section>

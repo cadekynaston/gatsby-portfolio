@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import { theme, media } from '../styles'
 import Fade from 'react-reveal/Fade';
 import TechList from './TechList';
+import Image from './image'
 
 const FeaturedProjectContainer = styled.div`
   display: flex;
@@ -99,10 +100,10 @@ const FeaturedProject = ({ img, title, classes, description, techList, siteLink,
 
   return (
     <FeaturedProjectContainer className={classes}>
-      <Img src={img} alt="" />
+      <Image filename={img} alt={`${title}`} />
       <Title>{title}</Title>
       <Description>
-        {description ? description : "A super cool game I created to practice using react."}
+        {description}
       </Description>
       <FlexRow>
         <TechList items={techList} />
