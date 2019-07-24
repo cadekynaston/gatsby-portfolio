@@ -16,7 +16,9 @@ import dataLock from '../images/data-lock.svg'
 
 
 const Title = styled.h2`
-  color: ${theme.colors.dark};
+  text-shadow: -2px -2px 0 ${theme.colors.dark}, 1px -1px 0 ${theme.colors.dark}, -1px 1px 0 ${theme.colors.dark}, 1px 1px 0 ${theme.colors.dark};
+
+  color: ${theme.colors.light};
   margin-bottom: 45px;
 `;
 

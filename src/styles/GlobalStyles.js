@@ -33,8 +33,8 @@ const GlobalStyles = ({ colors }) => {
       }
 
       h2 {
-        font-size: 48px;
-        line-height: 50px;
+        font-size: 52px;
+        line-height: 54px;
         margin-bottom: 15px;
         text-align: left;
         font-weight: 600;
@@ -201,14 +201,27 @@ const GlobalStyles = ({ colors }) => {
         mix-blend-mode: difference;
 
         path {
-          fill: #FAFAFF;
+          fill: ${theme.colors.light};
         }
 
         &:hover {
           opacity: .4;
-          /* path {
-            fill: #222;
-          } */
+
+        }
+      }
+
+      .nav-icon {
+        height: 22px;
+        width: 22px;
+
+        path {
+          fill: ${theme.colors.dark};
+        }
+
+        &:hover {
+          path {
+            fill: ${theme.colors.mayerPurple};
+          }
         }
       }
 

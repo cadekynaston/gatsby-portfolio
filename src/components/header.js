@@ -13,8 +13,8 @@ const Head = styled.header`
   justify-content: flex-start;
   align-items: center;
   background-color: ${props => props.bgColor ? props.bgColor : theme.colors.dark };
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   ${media.largeUp} {
     padding-left: 100px;
@@ -45,11 +45,14 @@ const HeaderCopy = styled.h5`
 `
 
 const HeaderLink = styled.a`
-  color: ${theme.colors.dark};
+  color: ${theme.colors.clearlinkBlue};
+
+  /* color: ${theme.colors.dark};
   text-shadow: -1px -1px 0 ${theme.colors.light}, 1px -1px 0 ${theme.colors.light}, -1px 1px 0 ${theme.colors.light}, 1px 1px 0 ${theme.colors.light};
+  */
 
   &:hover {
-    color: ${theme.colors.clearlinkBlue};
+    color: ${theme.colors.blueGray};
     cursor: pointer;
   }
 `

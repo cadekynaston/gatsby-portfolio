@@ -1,9 +1,9 @@
 import React from 'react';
 
-const IconTwitter = () => (
+const IconTwitter = ({ classes }) => (
 
 
-<svg className="side-icon" x="0px" y="0px"
+<svg className={classes} x="0px" y="0px"
 	 viewBox="0 0 612 612">
 	<g>
 		<path d="M612,116.258c-22.525,9.981-46.694,16.75-72.088,19.772c25.929-15.527,45.777-40.155,55.184-69.411

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const IconLinkedIn = () => (
+const IconLinkedIn = ({ classes }) => (
 
-<svg className="side-icon"   x="0px" y="0px"
+<svg className={classes}   x="0px" y="0px"
 	 width="430.117px" height="430.117px" viewBox="0 0 430.117 430.117"
 >
 <g>

@@ -4,6 +4,13 @@ import { theme, media } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
 import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
+import IconGithub from './images/github'
+import IconLinkedIn from './images/in'
+import IconTwitter from './images/twitter'
+import IconInstagram from './images/instagram'
+import IconCodepen from './images/codepen'
+import IconCodewars from './images/codewars'
+
 
 const Nav = styled.nav`
   position: relative;
@@ -17,8 +24,8 @@ const Nav = styled.nav`
   top: 0px;
 
   ${media.medium} {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `
 
@@ -71,9 +78,6 @@ const MobileNavOverlay = styled.div`
 `
 
 const MobileNav = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
   max-height: 500px;
   width: 100vw;
   transform: translateY(-100vh);
@@ -97,6 +101,11 @@ const MobileNav = styled.div`
     }
   }
 
+  ${media.medium} {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .nav-link {
     color: ${theme.colors.light};
     text-shadow: -1px -1px 0 ${theme.colors.dark}, 1px -1px 0 ${theme.colors.dark}, -1px 1px 0 ${theme.colors.dark}, 1px 1px 0 ${theme.colors.dark};
@@ -104,14 +113,54 @@ const MobileNav = styled.div`
     margin-top: 15px;
     transition: opacity ${theme.specificTransition};
     opacity: 0;
+    font-weight: 600;
 
     ${media.medium} {
-      font-size: 30px;
+      font-size: 36px;
     }
 
     &:hover {
       color: ${theme.colors.mayerPurple};
+      text-shadow: unset;
+
       cursor: pointer;
+    }
+  }
+`
+
+const NavLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+const SocialLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  opacity: 0;
+  transition: opacity ${theme.specificTransition};
+
+  ${media.largeUp} {
+    justify-content: flex-end;
+  }
+
+  ${media.small} {
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  &.open {
+    opacity: 1;
+  }
+
+  a {
+    margin-right: 20px;
+    color: ${theme.colors.mayerPurple};
+    font-weight: 600;
+    font-size: 18px;
+
+    &:last-of-type {
+      margin-right: 0;
     }
   }
 `
@@ -124,7 +173,7 @@ const NavButton = styled.div`
   width: 30px;
 
   > div {
-    transition: background-color ${theme.specificTransition} .3s, width ${theme.specificTransition} 0s;
+    transition: background-color ${theme.specificTransition} .3s, width ${theme.specificTransition} 0s, transform ${theme.specificTransition};
     background-color: ${theme.colors.light};
 
     &:first-of-type {
@@ -162,6 +211,22 @@ const NavButton = styled.div`
       transition-delay: 0s;
     }
   }
+
+  &.open {
+    > div {
+      transition: background-color ${theme.specificTransition} 0s, width ${theme.specificTransition} 0s, transform ${theme.specificTransition} .2s;
+
+      &:first-of-type {
+        transform: translateY(6px) rotate(45deg);
+        width: 100%;
+      }
+
+      &:nth-of-type(2) {
+        transform: translateY(-6px) rotate(-45deg);
+        width: 100%;
+      }
+    }
+  }
 `
 
 const Navigation = () => {
@@ -195,11 +260,35 @@ const Navigation = () => {
     scrollHeight={scrollHeight}>
         <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
           <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
-            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
-            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
-            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
-            <Link className="nav-link" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Resume</Link>
+            <NavLinks>
+              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
+              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
+              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
+              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Resume</Link>
+            </NavLinks>
+
+            <SocialLinks style={{ transitionDelay: `${openNav ? '300ms' : '50ms'}` }} className={`${openNav ? 'open' : 'closed'}`}>
+              <a href="https://github.com/cadekynaston" target="_blank">
+                <IconGithub classes="nav-icon" />
+              </a>
+              <a href="https://www.linkedin.com/in/cadekynaston/" target="_blank">
+                <IconLinkedIn classes="nav-icon"  />
+              </a>
+              <a href="https://twitter.com/cadekynaston" target="_blank">
+                <IconTwitter classes="nav-icon"  />
+              </a>
+              <a href="https://www.instagram.com/cadekynaston" target="_blank">
+                <IconInstagram classes="nav-icon"  />
+              </a>
+              <a href="https://codepen.io/cadekynaston/" target="_blank">
+                <IconCodepen classes="nav-icon"  />
+              </a>
+              <a href="https://codewars.com/users/ck1" target="_blank">
+                <IconCodewars classes="nav-icon"  />
+              </a>
+            </SocialLinks>
           </MobileNav>
+
 
         <MobileNavOverlay onClick={() => updateOpenNav(false)} className={`${openNav ? 'open' : 'closed'}`} />
       </MobileNavContainer>

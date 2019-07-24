@@ -62,22 +62,22 @@ const SideItemsLeft = () => {
         <CSSTransition  classNames="fade" timeout={1000}>
           <ItemsContainer>
             <a href="https://github.com/cadekynaston" target="_blank">
-              <IconGithub />
+              <IconGithub classes="side-icon" />
             </a>
             <a href="https://www.linkedin.com/in/cadekynaston/" target="_blank">
-              <IconLinkedIn />
+              <IconLinkedIn classes="side-icon"  />
             </a>
             <a href="https://twitter.com/cadekynaston" target="_blank">
-              <IconTwitter />
+              <IconTwitter classes="side-icon"  />
             </a>
             <a href="https://www.instagram.com/cadekynaston" target="_blank">
-              <IconInstagram />
+              <IconInstagram classes="side-icon"  />
             </a>
             <a href="https://codepen.io/cadekynaston/" target="_blank">
-              <IconCodepen />
+              <IconCodepen classes="side-icon"  />
             </a>
             <a href="https://codewars.com/users/ck1" target="_blank">
-              <IconCodewars />
+              <IconCodewars classes="side-icon"  />
             </a>
             <Line />
           </ItemsContainer>

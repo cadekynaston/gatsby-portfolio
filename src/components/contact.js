@@ -6,9 +6,15 @@ import { Container, Section, theme, media } from '../styles'
 import message from '../images/message.svg'
 
 const Title = styled.h2`
-  color: ${theme.colors.dark};
+  color: ${theme.colors.light};
+  text-shadow: -2px -2px 0 ${theme.colors.dark}, 1px -1px 0 ${theme.colors.dark}, -1px 1px 0 ${theme.colors.dark}, 1px 1px 0 ${theme.colors.dark};
   margin-bottom: 25px;
 `;
+
+const Copy = styled.h5`
+  color: ${theme.colors.dark};
+  font-size: 22px;
+`
 
 const ContactImage = styled.img`
 
@@ -43,15 +49,15 @@ const StyledForm = styled.form`
 
   div {
     width: 100%;
-    display: flex;
+    display: column;
     flex-direction: row;
     margin-bottom: 15px;
-    align-items: center;
   }
 
   label {
-    width: 100px;
     color: ${theme.colors.darkLight};
+    font-size: 12px;
+    margin-bottom: 5px;
   }
 
   input,
@@ -59,10 +65,10 @@ const StyledForm = styled.form`
     width: 100%;
     max-width: 100%;
     border: 1px solid ${theme.colors.darkLight};
-    color: ${theme.colors.darkLight};
-    /* box-shadow: ${theme.boxShadow}; */
+    color: ${theme.colors.dark};
+    margin-top: 5px;
     border-radius: 5px;
-    padding: 12px 20px;
+    padding: 12px;
     font-size: 14px;
 
     &:focus {
@@ -71,6 +77,7 @@ const StyledForm = styled.form`
   }
 
   button {
+    display: block;
     background-color: ${theme.colors.mayerPurple};
     color: ${theme.colors.light};
     border-radius: 5px;
@@ -104,18 +111,15 @@ const Projects = ({ data }) => {
       <Container>
         <FlexRow>
           <div>
-            <Title>Get in Touch.</Title>
-            <h4>I'd love to hear from you if you have any questions or if you just feel like saying hi!</h4>
+            <Title>Let's Connect.</Title>
+            <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
             <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="Contact Form" />
-              <div>
-                <label>Name</label><input type="text" name="name" placeholder="Name" />
-              </div>
               <div>
                 <label>Email</label><input type="email" name="email" placeholder="Email"  />
               </div>
               <div>
-                <label>Message</label><textarea name="message"></textarea>
+                <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
               </div>
               <div>
                 <button type="submit">Send</button>
