@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
+import Fade from 'react-reveal/Fade';
 
 import { Container, Section, theme, media } from '../styles'
 import Image from './image'
@@ -97,9 +98,7 @@ const StyledForm = styled.form`
 `
 
 
-const Projects = ({ data }) => {
-
-  const { frontmatter, html } = data[0].node;
+const Contact = () => {
 
   return (
     <Section bgColor={theme.colors.light}>
@@ -107,32 +106,34 @@ const Projects = ({ data }) => {
       <Container>
         <FlexRow>
           <div>
-            <Title>Let's Connect.</Title>
-            <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
-            <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="Contact Form" />
-              <div>
-                <label>Email</label><input type="email" name="email" placeholder="Email"  />
-              </div>
-              <div>
-                <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
-              </div>
-              <div>
-                <button type="submit">Send</button>
-              </div>
-            </StyledForm>
+            <Fade>
+              <Title>Let's Connect.</Title>
+              <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
+              <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="Contact Form" />
+                <div>
+                  <label>Email</label><input type="email" name="email" placeholder="Email"  />
+                </div>
+                <div>
+                  <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
+                </div>
+                <div>
+                  <button type="submit">Send</button>
+                </div>
+              </StyledForm>
+            </Fade>
           </div>
           <ImageContainer>
-            <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
+            <Fade>
+              <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
+            </Fade>
           </ImageContainer>
         </FlexRow>
       </Container>
     </Section>
   )
-
 }
 
-
-export default Projects
+export default Contact
 
 

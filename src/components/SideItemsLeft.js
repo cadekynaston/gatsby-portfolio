@@ -30,7 +30,6 @@ const ItemsContainer = styled.div`
   a {
     line-height: 0;
   }
-
 `
 
 const Line = styled.div`

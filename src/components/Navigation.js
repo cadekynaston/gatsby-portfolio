@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
 import { Link , Events } from 'react-scroll'
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import { theme, media } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'

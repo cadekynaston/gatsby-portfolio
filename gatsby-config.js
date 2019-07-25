@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Cade Kynaston - Software Developer`,
-    description: `Cade Kynaston is a software developer based in Salt Lake City, Utah.`,
+    description: `Cade Kynaston is a software developer based in Salt Lake City, Utah. Currently focused on improving at React.`,
     author: `@cadekynaston`,
   },
   plugins: [
@@ -42,11 +42,11 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-transformer-json`,
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'data',
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/src/json/`,
       },
     },
     {

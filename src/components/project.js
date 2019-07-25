@@ -1,11 +1,10 @@
-import React, { useState } from "react"
-import styled from "@emotion/styled"
+import React, { useState } from 'react'
+import styled from '@emotion/styled'
 import Fade from 'react-reveal/Fade'
 
 import { theme, media } from '../styles'
-import TechList from './TechList';
-import github from '../images/github-logo.svg'
-import external from '../images/external-link.svg'
+import TechList from './TechList'
+import Image from './image'
 
 
 const ProjectInner = styled.div`
@@ -50,7 +49,7 @@ const ProjectContainer = styled.div`
   }
 `
 
-const Icon = styled.img`
+const ImageContainer = styled.div`
   width: 50px;
   height: 50px;
   margin-bottom: 15px;
@@ -149,9 +148,12 @@ const Project = ({ icon, title, classes, description, techList, codeLink, siteLi
       <ProjectInner
         onMouseEnter={() => updatePackageCardHover(true)}
         onMouseLeave={() => updatePackageCardHover(false)} >
+        <Fade>
         <div>
           <FlexRow>
-            <Icon src={icon} alt="" />
+            <ImageContainer>
+              <Image filename={`${icon}`} classes='gatsby-sbs-image' alt={`${title}`} />
+            </ImageContainer>
             <Title>{title}</Title>
           </FlexRow>
           <Description dangerouslySetInnerHTML={{__html: description}} />
@@ -171,6 +173,7 @@ const Project = ({ icon, title, classes, description, techList, codeLink, siteLi
             </ProjectLinks>
           <TechList items={techList} />
         </div>
+        </Fade>
       </ProjectInner>
     </ProjectContainer>
   )

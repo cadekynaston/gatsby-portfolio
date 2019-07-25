@@ -50,11 +50,6 @@ const HeaderLink = styled.a`
     cursor: pointer;
   }
 `
-
-const Description = styled.h5`
-  max-width: 900px;
-`
-
 const Header = ({ data, bgColor }) => {
 
   const [isMounted, setIsMounted] = useState(false)
@@ -63,11 +58,8 @@ const Header = ({ data, bgColor }) => {
     setTimeout(() => setIsMounted(true), 1000)
   }, []);
 
-  const { frontmatter, html } = data[0].node
-
-
-  const one = () => <HeaderText style={{ transitionDelay: '200ms' }}>{frontmatter.name}<HeaderLink href="https://www.clearlink.com" target="_blank"> {frontmatter.company}</HeaderLink></HeaderText>;
-  const two = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{frontmatter.copy}</HeaderCopy>;
+  const one = () => <HeaderText style={{ transitionDelay: '200ms' }}>{data.name}<HeaderLink href="https://www.clearlink.com" target="_blank"> {data.company}</HeaderLink></HeaderText>;
+  const two = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{data.copy}</HeaderCopy>;
 
   const items = [one, two];
 

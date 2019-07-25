@@ -1,0 +1,62 @@
+[
+  {
+    "company": "@Clearlink",
+    "dates": "January 2018 — Current",
+    "position": "Front End Developer",
+    "copy": "At Clearlink we create create SEO driven websites to generate new customers for our brand partners. I work closely with SEO specialists, designers and marketers to create responsive sites.",
+    "jobFeatures": [
+      "React",
+      "PHP",
+      "Handlebars",
+      "Jira",
+      "Sketch",
+      "GitHub"
+    ],
+    "open": true
+  },
+  {
+    "company": "@Calldrip",
+    "dates": "July 2017 — January 2018",
+    "position": "Software Developer",
+    "copy": "Calldrip is a small software company based in Utah. I functioned as a full stack developer helping them to improve and add features to their web-based customer lead generation software.",
+    "jobFeatures": [
+      "PHP",
+      "jQuery",
+      "Google Cloud Platform",
+      "Trello",
+      "MySQL",
+      "HelpScout",
+      "Bitbucket"
+    ],
+    "open": false
+  },
+  {
+    "company": "@Hill Air Force Base",
+    "dates": "May 2016 — July 2017",
+    "position": "Software Engineering Intern",
+    "copy": "I worked for the United States Air Force as a civilian during college. I worked for the software maintenance group working on f-16's.",
+    "jobFeatures": [
+      "Security Clearance",
+      "ADA",
+      "Python",
+      "Java",
+      "Linux"
+    ],
+    "open": false
+  },
+  {
+    "company": "@Weber State University",
+    "dates": "December 2015 — May 2016",
+    "position": "Software Development Intern",
+    "copy": "My first dev job. I did customer support and added small features and tweaks to Chitester, Weber State's own testing software. It was my first opportunity to work with a large existing production codebase.",
+    "jobFeatures": [
+      "ColdFusion",
+      "Node",
+      "MySQL",
+      "Asana",
+      "HTML",
+      "JavaScript"
+    ],
+    "open": false
+  }
+]

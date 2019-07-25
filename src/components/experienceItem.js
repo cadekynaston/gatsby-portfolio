@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
 
 import { theme, media } from '../styles'
-import caret from '../images/caret.svg'
 import arrow from '../images/arrow.svg'
 import rewind from '../images/rewind.svg'
 
@@ -124,7 +123,7 @@ const Tech = styled.ul`
 
 `
 
-const Project = ({ dates, copy, position, company, classes = '', open }) => {
+const Project = ({ dates, copy, position, company, classes = '', open, jobFeatures }) => {
 
   const [isOpen, updateIsOpen] = useState(open);
 
@@ -138,12 +137,7 @@ const Project = ({ dates, copy, position, company, classes = '', open }) => {
         <Dates>{dates}</Dates>
         <Copy>{copy}</Copy>
         <Tech>
-          <li>Handlebars</li>
-          <li>PHP</li>
-          <li>SCSS</li>
-          <li>Sketch</li>
-          <li>Javascript</li>
-          <li>React</li>
+          {jobFeatures.map(feature => <li key={feature}>{feature}</li>)}
         </Tech>
       </SecondRow>
     </ExperienceContainer>

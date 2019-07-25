@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
+import Fade from 'react-reveal/Fade';
 
 import ExperienceItem from './experienceItem'
-import { Container, Section, theme, media } from '../styles'
-
-
+import { Container, Section, theme } from '../styles'
 
 const Title = styled.h2`
   color: ${theme.colors.light};
@@ -19,37 +18,29 @@ const ExperienceContainer = styled.div`
 
 const Experience = ({ data }) => {
 
-  const { frontmatter, html } = data[0].node;
-
+  const experienceJSX = data.map(experienceNode => {
+    const experience =  experienceNode.node;
+    return <ExperienceItem
+      company={`${experience.company}`}
+      dates={`${experience.dates}`}
+      position={`${experience.position}`}
+      copy={`${experience.copy}`}
+      open={experience.open}
+      jobFeatures={experience.jobFeatures}
+      key={`${experience.company}`} />
+  })
 
   return (
     <Section bgColor={theme.colors.darkBlue}>
       <Element name="experience" />
       <Container>
-        <Title>Experience.</Title>
+        <Fade>
+          <Title>Experience.</Title>
+        </Fade>
         <ExperienceContainer>
-          <ExperienceItem
-            company="@Clearlink"
-            dates="January 2018 &mdash;  Current"
-            position="Front End Developer"
-            copy="At Clearlink we create create SEO driven websites to generate new customers for our brand partners. I work closely with SEO specialists, designers and marketers to create responsive sites."
-            open={true} />
-          <ExperienceItem
-            company="@Calldrip"
-            dates="July 2017 &mdash; January 2018"
-            position="Software Developer"
-            copy="Calldrip is a small software company based in Utah. I functioned as a full stack developer helping them to improve and add features to their web-based customer lead generation software."
-            />
-          <ExperienceItem
-            company="@Hill Air Force Base"
-            dates="May 2016 &mdash;  July 2017"
-            position="Software Engineering Intern"
-            copy="I worked for the United States Airforce as a civilian during college. I worked for the software maintenance group working on f-16's. I had a chance to work with some super cool hardware as well as software." />
-          <ExperienceItem
-            company="@Weber State University"
-            position="Software Development Intern"
-            copy="My first dev job. I did customer support and added small features and tweaks to Chitester, Weber State's own testing software. It was my first opportunity to work with a large existing production codebase."
-            dates="December 2015 &mdash;  May 2016" />
+          <Fade>
+            {experienceJSX}
+          </Fade>
         </ExperienceContainer>
       </Container>
     </Section>

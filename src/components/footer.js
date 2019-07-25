@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled from "@emotion/styled"
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import { Container, theme, media } from '../styles'
 

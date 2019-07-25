@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
+import Fade from 'react-reveal/Fade';
 
 import { theme, media } from '../styles'
-import Fade from 'react-reveal/Fade';
 import TechList from './TechList';
 import Image from './image'
 
@@ -97,24 +97,26 @@ const FeaturedProject = ({ img, title, classes, description, techList, siteLink,
 
   return (
     <FeaturedProjectContainer className={classes}>
-      <ImgContainer>
-        <Image filename={img} alt={`${title}`} className="gatsby-sbs-image"/>
-      </ImgContainer>
-      <Title>{title}</Title>
-      <Description>
-        {description}
-      </Description>
-      <FlexRow>
-        <TechList items={techList} />
-        <ProjectLinks>
-            { siteLink &&
-              <ProjectLink href={siteLink} target='_blank'>Visit Site</ProjectLink>
-            }
-            { codeLink &&
-              <ProjectLink href={codeLink} target='_blank'>View Code</ProjectLink>
-            }
-        </ProjectLinks>
-      </FlexRow>
+      <Fade>
+        <ImgContainer>
+          <Image filename={img} alt={`${title}`} className="gatsby-sbs-image"/>
+        </ImgContainer>
+        <Title>{title}</Title>
+        <Description>
+          {description}
+        </Description>
+        <FlexRow>
+          <TechList items={techList} />
+          <ProjectLinks>
+              { siteLink &&
+                <ProjectLink href={siteLink} target='_blank'>Visit Site</ProjectLink>
+              }
+              { codeLink &&
+                <ProjectLink href={codeLink} target='_blank'>View Code</ProjectLink>
+              }
+          </ProjectLinks>
+        </FlexRow>
+      </Fade>
     </FeaturedProjectContainer>
   )
 }
