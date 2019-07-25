@@ -50,7 +50,7 @@ const SideItemsRight = () => {
 
   useEffect(() => {
     setTimeout(() => setIsMounted(true), 1800);
-  });
+  }, []);
 
   return (
 

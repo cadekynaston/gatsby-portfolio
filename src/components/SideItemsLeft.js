@@ -4,12 +4,7 @@ import styled from '@emotion/styled'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import { media } from '../styles'
-import IconGithub from './images/github'
-import IconLinkedIn from './images/in'
-import IconTwitter from './images/twitter'
-import IconInstagram from './images/instagram'
-import IconCodepen from './images/codepen'
-import IconCodewars from './images/codewars'
+import SocialIconLinks from './socialIconLinks'
 
 
 const ItemsContainer = styled.div`
@@ -49,9 +44,8 @@ const SideItemsLeft = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsMounted(true) }, 1800);
-  });
+    setTimeout(() => setIsMounted(true), 1800);
+  }, []);
 
   return (
 
@@ -59,24 +53,7 @@ const SideItemsLeft = () => {
       {isMounted &&
         <CSSTransition  classNames="fade" timeout={1000}>
           <ItemsContainer>
-            <a href="https://github.com/cadekynaston" target="_blank">
-              <IconGithub classes="side-icon" />
-            </a>
-            <a href="https://www.linkedin.com/in/cadekynaston/" target="_blank">
-              <IconLinkedIn classes="side-icon"  />
-            </a>
-            <a href="https://twitter.com/cadekynaston" target="_blank">
-              <IconTwitter classes="side-icon"  />
-            </a>
-            <a href="https://www.instagram.com/cadekynaston" target="_blank">
-              <IconInstagram classes="side-icon"  />
-            </a>
-            <a href="https://codepen.io/cadekynaston/" target="_blank">
-              <IconCodepen classes="side-icon"  />
-            </a>
-            <a href="https://codewars.com/users/ck1" target="_blank">
-              <IconCodewars classes="side-icon"  />
-            </a>
+              <SocialIconLinks iconClasses="side-icon" />
             <Line />
           </ItemsContainer>
         </CSSTransition>

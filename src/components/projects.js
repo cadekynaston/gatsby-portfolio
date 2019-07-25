@@ -20,10 +20,10 @@ const Title = styled.h2`
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-gap: 40px;
+  grid-gap: 20px;
 
   ${media.mediumOnly} {
-    grid-gap: 20px;
+
     grid-template-columns: 1fr 1fr;
 
     .featured {
@@ -33,6 +33,8 @@ const ProjectGrid = styled.div`
 
   ${media.largeUp} {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+
 
     .project {
       grid-column: span 2;
@@ -110,7 +112,7 @@ const Projects = ({ data }) => {
           {/* { seeMoreProjects && */}
             <FeaturedProject classes="feature-2 featured"
               featured={true}
-              img="phone.png"
+              img="phone-green"
               title="Calldrip"
               description="While working at Calldrip I helped create a product called Dynamic Numbers which would dynamically show each unique visitor to our clients website a unique phone number. Those phone numbers could then be tracked for precise customer tracking."
               techList={['PHP', 'MySQL', 'Google Cloud Platform', 'Bootstrap', 'Google Charts']}

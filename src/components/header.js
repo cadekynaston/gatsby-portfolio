@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -47,10 +45,6 @@ const HeaderCopy = styled.h5`
 const HeaderLink = styled.a`
   color: ${theme.colors.clearlinkBlue};
 
-  /* color: ${theme.colors.dark};
-  text-shadow: -1px -1px 0 ${theme.colors.light}, 1px -1px 0 ${theme.colors.light}, -1px 1px 0 ${theme.colors.light}, 1px 1px 0 ${theme.colors.light};
-  */
-
   &:hover {
     color: ${theme.colors.blueGray};
     cursor: pointer;
@@ -71,9 +65,6 @@ const Header = ({ data, bgColor }) => {
 
   const { frontmatter, html } = data[0].node
 
-  const subItems = frontmatter.subitems.map(item => {
-    return <span>item</span>
-  })
 
   const one = () => <HeaderText style={{ transitionDelay: '200ms' }}>{frontmatter.name}<HeaderLink href="https://www.clearlink.com" target="_blank"> {frontmatter.company}</HeaderLink></HeaderText>;
   const two = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{frontmatter.copy}</HeaderCopy>;

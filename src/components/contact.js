@@ -15,17 +15,6 @@ const Copy = styled.h5`
   font-size: 22px;
 `
 
-// const ContactImage = styled(Image)`
-
-//   width: 90%;
-
-//   ${media.mediumUp} {
-//     padding-left: 20px;
-//     max-width: 40%;
-//     max-height: 400px;
-//   }
-// `
-
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -37,7 +26,7 @@ const FlexRow = styled.div`
   }
 
 
-  ${media.small} {
+  ${media.medium} {
     flex-direction: column;
   }
 `
@@ -95,6 +84,10 @@ const StyledForm = styled.form`
       cursor: pointer;
       color: ${theme.colors.light};
       box-shadow: ${theme.boxShadowHover};
+    }
+
+    ${media.medium} {
+      margin-bottom: 20px;
     }
 
     ${media.small} {

@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from "react"
 import styled from '@emotion/styled';
+import { Link , Events } from 'react-scroll'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import { theme, media } from '../styles'
 import gatsbyLogo from '../images/gatsby-icon.png'
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
-import IconGithub from './images/github'
-import IconLinkedIn from './images/in'
-import IconTwitter from './images/twitter'
-import IconInstagram from './images/instagram'
-import IconCodepen from './images/codepen'
-import IconCodewars from './images/codewars'
-
+import SocialIconLinks from './socialIconLinks';
 
 const Nav = styled.nav`
   position: relative;
@@ -36,12 +31,16 @@ const NavContainer = styled.div`
   transition: ${theme.transition};
   box-shadow: ${theme.boxShadow};
 
+  &.not-mounted {
+    transform: translateY(-70px);
+  }
+
   &.scrolled {
     background-color: ${theme.colors.light};
   }
 
   &.top {
-    background-color: ${theme.colors.dark};
+    background-color: transparent;
     box-shadow: none;
   }
 `
@@ -234,21 +233,20 @@ const Navigation = () => {
   const [scrolledTop, updateScrolledTop] = useState(true)
   const [scrollHeight, updateScrollHeight] = useState(0)
   const [openNav, updateOpenNav] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     Events.scrollEvent.register('begin', () => {
       updateOpenNav(false)
     });
-
+    setTimeout(() => setIsMounted(true), 2800);
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
   const handleScroll = () => {
-
-
     if (window.pageYOffset < 100) {
       updateScrollHeight(window.pageYOffset);
     }
@@ -256,44 +254,24 @@ const Navigation = () => {
   }
 
   return (
-    <NavContainer className={`${scrolledTop ? 'top' : 'scrolled'} ${openNav ? 'open' : 'closed'}`}
+    <NavContainer className={`${scrolledTop ? 'top' : 'scrolled'} ${openNav ? 'open' : 'closed'} ${isMounted ? 'mounted' : 'not-mounted'}`}
     scrollHeight={scrollHeight}>
         <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
           <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
             <NavLinks>
               <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
               <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
-              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-50} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
-              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} offset={-50} to="test1" spy={true} smooth={true} delay={400} duration={500} >Resume</Link>
+              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-30} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
+              <a className="nav-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} >Resume</a>
             </NavLinks>
-
             <SocialLinks style={{ transitionDelay: `${openNav ? '300ms' : '50ms'}` }} className={`${openNav ? 'open' : 'closed'}`}>
-              <a href="https://github.com/cadekynaston" target="_blank">
-                <IconGithub classes="nav-icon" />
-              </a>
-              <a href="https://www.linkedin.com/in/cadekynaston/" target="_blank">
-                <IconLinkedIn classes="nav-icon"  />
-              </a>
-              <a href="https://twitter.com/cadekynaston" target="_blank">
-                <IconTwitter classes="nav-icon"  />
-              </a>
-              <a href="https://www.instagram.com/cadekynaston" target="_blank">
-                <IconInstagram classes="nav-icon"  />
-              </a>
-              <a href="https://codepen.io/cadekynaston/" target="_blank">
-                <IconCodepen classes="nav-icon"  />
-              </a>
-              <a href="https://codewars.com/users/ck1" target="_blank">
-                <IconCodewars classes="nav-icon"  />
-              </a>
+              <SocialIconLinks iconClasses="nav-icon" />
             </SocialLinks>
           </MobileNav>
-
-
         <MobileNavOverlay onClick={() => updateOpenNav(false)} className={`${openNav ? 'open' : 'closed'}`} />
       </MobileNavContainer>
       <Nav className={`${scrolledTop ? 'top' : 'scrolled'}`}>
-        <NavLogo src={gatsbyLogo} />
+        <NavLogo src={gatsbyLogo} alt="Gatsby Logo" />
         <NavButton
           onClick={() => updateOpenNav(prevState => !prevState)}
           className={`${openNav ? 'open' : 'closed'} ${scrolledTop ? 'top' : 'scrolled'}`} >
@@ -303,7 +281,6 @@ const Navigation = () => {
       </Nav>
     </NavContainer>
   )
-
 }
 
 export default Navigation

@@ -38,15 +38,17 @@ const Experience = ({ data }) => {
             company="@Calldrip"
             dates="July 2017 &mdash; January 2018"
             position="Software Developer"
-            copy="Calldrip is a small software company based in Utah. I functioned as a full stack developer helping them to improve and add features to their web-based customer lead generation software." />
+            copy="Calldrip is a small software company based in Utah. I functioned as a full stack developer helping them to improve and add features to their web-based customer lead generation software."
+            />
           <ExperienceItem
             company="@Hill Air Force Base"
             dates="May 2016 &mdash;  July 2017"
             position="Software Engineering Intern"
-            copy="I worked for the United States Airforce as a civilian during college. I was working for the software maintenance group working on f-16's" />
+            copy="I worked for the United States Airforce as a civilian during college. I worked for the software maintenance group working on f-16's. I had a chance to work with some super cool hardware as well as software." />
           <ExperienceItem
             company="@Weber State University"
             position="Software Development Intern"
+            copy="My first dev job. I did customer support and added small features and tweaks to Chitester, Weber State's own testing software. It was my first opportunity to work with a large existing production codebase."
             dates="December 2015 &mdash;  May 2016" />
         </ExperienceContainer>
       </Container>

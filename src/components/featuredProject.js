@@ -22,14 +22,11 @@ const FeaturedProjectContainer = styled.div`
   }
 `
 
-const Img = styled.img`
-  height: auto;
-  max-height: 400px;
-  max-width: 400px;
-  display: block;
+const ImgContainer = styled.div`
+  width: 80%;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
 
   ${media.small} {
     max-width: 100%;
@@ -100,7 +97,9 @@ const FeaturedProject = ({ img, title, classes, description, techList, siteLink,
 
   return (
     <FeaturedProjectContainer className={classes}>
-      <Image filename={img} alt={`${title}`} />
+      <ImgContainer>
+        <Image filename={img} alt={`${title}`} className="gatsby-sbs-image"/>
+      </ImgContainer>
       <Title>{title}</Title>
       <Description>
         {description}

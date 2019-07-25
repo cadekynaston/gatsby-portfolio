@@ -20,6 +20,8 @@ const StyledFooter = styled.footer`
 `;
 
 const StyledContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
   padding-top: 25px;
   padding-bottom: 25px;
 
@@ -27,6 +29,11 @@ const StyledContainer = styled(Container)`
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+  ${media.small} {
+    flex-direction: column;
+  }
+
 `
 
 const FooterCopy = styled.h5`
@@ -34,18 +41,39 @@ const FooterCopy = styled.h5`
   color: ${theme.colors.lightGray};
   text-align: center;
 
+  &:first-of-type {
+    text-align: left;
+    ${media.small} {
+      margin-bottom: 20px;
+    }
+  }
+
+  &:last-of-type {
+    text-align: right;
+  }
+
   ${media.medium} {
     font-size: 16px;
+  }
+
+  a {
+    color: ${theme.colors.lightGray};
+    text-decoration: underline;
+
+    &:hover {
+      color: ${theme.colors.light};
+    }
   }
 `
 
 
-const Footer = ({ data, bgColor }) => {
+const Footer = ({ bgColor }) => {
 
   return (
     <StyledFooter bgColor={bgColor}>
       <StyledContainer>
         <FooterCopy>Cade Kynaston 2019</FooterCopy>
+        <FooterCopy>Made using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a> + <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> + <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a></FooterCopy>
       </StyledContainer>
     </StyledFooter>
   )
