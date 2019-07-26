@@ -27,7 +27,8 @@
     "react-helmet": "^5.2.0",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.7.12",
-    "react-transition-group": "^4.0.1"
+    "react-transition-group": "^4.0.1",
+    "scrollreveal": "^4.0.5"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

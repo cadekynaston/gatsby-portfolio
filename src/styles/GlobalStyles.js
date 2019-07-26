@@ -187,13 +187,6 @@ const GlobalStyles = () => {
         width: 100%;
       }
 
-      .mix-mode {
-        .react-reveal {
-          mix-blend-mode: difference;
-          background-color: transparent;
-        }
-      }
-
       .side-icon {
         height: 20px;
         width: 20px;

@@ -239,7 +239,7 @@ const Navigation = () => {
     Events.scrollEvent.register('begin', () => {
       updateOpenNav(false)
     });
-    setTimeout(() => setIsMounted(true), 2800);
+    setTimeout(() => setIsMounted(true), 400);
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }

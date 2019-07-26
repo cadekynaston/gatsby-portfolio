@@ -123,12 +123,12 @@ const Tech = styled.ul`
 
 `
 
-const Project = ({ dates, copy, position, company, classes = '', open, jobFeatures }) => {
+const Project = React.forwardRef(({ dates, copy, position, company, classes = '', open, jobFeatures }, ref) => {
 
   const [isOpen, updateIsOpen] = useState(open);
 
   return (
-    <ExperienceContainer className={`${isOpen ? 'open' : ''} ${classes}`}>
+    <ExperienceContainer ref={ref} className={`${isOpen ? 'open' : ''} ${classes}`}>
       <FirstRow className='first-row' onClick={() => updateIsOpen(prev => !prev)}>
         <Position>{position}</Position>
         <Company>{company}</Company>
@@ -142,8 +142,7 @@ const Project = ({ dates, copy, position, company, classes = '', open, jobFeatur
       </SecondRow>
     </ExperienceContainer>
   )
-}
+})
 
 export default Project
-
 

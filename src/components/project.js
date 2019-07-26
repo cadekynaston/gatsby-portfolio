@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import Fade from 'react-reveal/Fade'
 
 import { theme, media } from '../styles'
 import TechList from './TechList'
@@ -139,16 +138,15 @@ const ProjectLink = styled.a`
 `
 
 
-const Project = ({ icon, title, classes, description, techList, codeLink, siteLink }) => {
+const Project = React.forwardRef(({ icon, title, classes, description, techList, codeLink, siteLink }, ref) => {
 
   const [packageCardHover, updatePackageCardHover] = useState(false)
 
   return (
-    <ProjectContainer className={`${classes} ${packageCardHover ? 'hovered': ''}`}>
+    <ProjectContainer ref={ref} className={`${classes} ${packageCardHover ? 'hovered': ''}`}>
       <ProjectInner
         onMouseEnter={() => updatePackageCardHover(true)}
         onMouseLeave={() => updatePackageCardHover(false)} >
-        <Fade>
         <div>
           <FlexRow>
             <ImageContainer>
@@ -173,12 +171,10 @@ const Project = ({ icon, title, classes, description, techList, codeLink, siteLi
             </ProjectLinks>
           <TechList items={techList} />
         </div>
-        </Fade>
       </ProjectInner>
     </ProjectContainer>
   )
-}
+})
 
 export default Project
-
 

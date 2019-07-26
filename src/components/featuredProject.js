@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Fade from 'react-reveal/Fade';
 
 import { theme, media } from '../styles'
 import TechList from './TechList';
@@ -93,11 +92,10 @@ const ProjectLink = styled.a`
   }
 `
 
-const FeaturedProject = ({ img, title, classes, description, techList, siteLink, codeLink }) => {
+const FeaturedProject = React.forwardRef(({ img, title, classes, description, techList, siteLink, codeLink }, ref) => {
 
   return (
-    <FeaturedProjectContainer className={classes}>
-      <Fade>
+    <FeaturedProjectContainer ref={ref} className={classes}>
         <ImgContainer>
           <Image filename={img} alt={`${title}`} className="gatsby-sbs-image"/>
         </ImgContainer>
@@ -116,11 +114,9 @@ const FeaturedProject = ({ img, title, classes, description, techList, siteLink,
               }
           </ProjectLinks>
         </FlexRow>
-      </Fade>
     </FeaturedProjectContainer>
   )
-}
+})
 
 export default FeaturedProject
-
 

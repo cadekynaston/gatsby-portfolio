@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
-import Fade from 'react-reveal/Fade';
 
 import { Container, Section, theme, media } from '../styles'
 import Image from './image'
@@ -63,6 +62,7 @@ const StyledForm = styled.form`
     border-radius: ${theme.borderRadius};
     padding: 12px;
     font-size: 14px;
+    resize: vertical;
 
     &:focus {
       outline: none;
@@ -106,7 +106,6 @@ const Contact = () => {
       <Container>
         <FlexRow>
           <div>
-            <Fade>
               <Title>Let's Connect.</Title>
               <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
               <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -121,12 +120,9 @@ const Contact = () => {
                   <button type="submit">Send</button>
                 </div>
               </StyledForm>
-            </Fade>
           </div>
           <ImageContainer>
-            <Fade>
               <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
-            </Fade>
           </ImageContainer>
         </FlexRow>
       </Container>
@@ -135,5 +131,4 @@ const Contact = () => {
 }
 
 export default Contact
-
 
