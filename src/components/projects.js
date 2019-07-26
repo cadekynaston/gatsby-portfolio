@@ -51,7 +51,7 @@ const ProjectGrid = styled.div`
 //   color: ${theme.colors.light};
 //   text-align: center;
 //   padding: 12px 20px;
-//   border-radius: 5px;
+//   border-radius: ${theme.borderRadius};
 //   width: 350px;
 //   margin-top: 30px;
 //   margin-left: auto;

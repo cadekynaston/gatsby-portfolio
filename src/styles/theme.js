@@ -4,30 +4,14 @@ const theme = {
     light: '#FAFAFF',
     dark: '#30343f',
     darkLight: '#636b83',
-    purple: '#E4D9FF',
     mayerPurple: '#614685',
     darkBlue: '#1E2749',
     darkBlueLighter: '#25315b',
-    lightPurple: '#e6e6ff',
     yellow: '#FED766',
-    blue: '#009FB7',
     gray: '#8892b0',
-    redPurple: '#1F1A38',
-    pink: '#DD99BB',
-    champagne: '#EAD7D1',
-    dust: '#DBCDC6',
     blueGray: '#545677',
-    blonde: '#FAF0CA',
     lightGray: '#D1D1D1',
-    cadetBlue: '#51A3A3',
-    tangoPink: '#DD7373',
-    peach: '#FFB4A2',
-    clearlinkBlue: '#1990ff',
-    cadetGray: '#8AA29E',
-    yankeeBlue: '#202C39',
-    indigo: '#283845',
-    orange: '#F29559',
-    buff: '#F2D492',
+    clearlinkBlue: '#1990ff'
   },
 
   boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
@@ -60,41 +44,12 @@ const theme = {
   },
 
   maxWidth: '1100px',
-  padding: '20px',
-  margin: '20px',
+  borderRadius: '5px',
 
   fonts: {
     Raleway: 'Raleway, sans-serif',
     Roboto: 'Roboto, sans-serif',
-  },
-
-  fontSizes: {
-    xsmall: '12px',
-    smallish: '13px',
-    small: '14px',
-    medium: '16px',
-    large: '18px',
-    xlarge: '20px',
-    xxlarge: '22px',
-    h3: '32px',
-  },
-
-  borderRadius: '2px',
-  headerHeight: '100px',
-  headerScrollHeight: '70px',
-
-  tabHeight: 42,
-  tabWidth: 120,
-
-  gradient: `linear-gradient(0.4turn, #64d6ff, #64ffda)`,
-
-  loaderDelay: `6`,
-
-  hamburgerWidth: 30,
-  hamBefore: `top 0.1s ease-in 0.25s, opacity 0.1s ease-in`,
-  hamBeforeActive: `top 0.1s ease-out, opacity 0.1s ease-out 0.12s`,
-  hamAfter: `bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19)`,
-  hamAfterActive: `bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s`,
+  }
 };
 
 export default theme;

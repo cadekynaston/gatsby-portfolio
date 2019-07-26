@@ -10,7 +10,7 @@ const FeaturedProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius};
   background-color: ${theme.colors.light};
   box-shadow: ${theme.boxShadow};
 
@@ -72,7 +72,7 @@ const ProjectLink = styled.a`
   padding: 12px 20px;
   color: ${theme.colors.light};
   background-color: ${theme.colors.mayerPurple};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius};
   white-space: nowrap;
   box-shadow: ${theme.boxShadow};
   transition: ${theme.transition};

@@ -15,7 +15,7 @@ const ProjectInner = styled.div`
   height: 100%;
   padding: 20px;
   box-shadow: ${theme.boxShadow};
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius};
 
 
   &.featured {
@@ -119,7 +119,7 @@ const ProjectLink = styled.a`
 
   ${media.medium} {
     width: 50%;
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius};
     background-color: ${theme.colors.mayerPurple};
     color: ${theme.colors.light};
     white-space: nowrap;

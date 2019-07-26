@@ -9,7 +9,7 @@ const ExperienceContainer = styled.div`
   background-color: ${theme.colors.darkBlueLighter};
   border: 1px solid ${theme.colors.gray};
   padding: 20px 40px 20px 20px;
-  border-radius: 5px;
+  border-radius: ${theme.borderRadius};
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;

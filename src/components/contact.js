@@ -60,7 +60,7 @@ const StyledForm = styled.form`
     border: 1px solid ${theme.colors.darkLight};
     color: ${theme.colors.dark};
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius};
     padding: 12px;
     font-size: 14px;
 
@@ -73,7 +73,7 @@ const StyledForm = styled.form`
     display: block;
     background-color: ${theme.colors.mayerPurple};
     color: ${theme.colors.light};
-    border-radius: 5px;
+    border-radius: ${theme.borderRadius};
     padding: 12px 20px;
     box-shadow: ${theme.boxShadow};
     transition: ${theme.transition};
