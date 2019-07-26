@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
-import ScrollReveal from 'scrollreveal'
+// import ScrollReveal from 'scrollreveal'
 
 import Project from './project'
 import FeaturedProject from './featuredProject';
