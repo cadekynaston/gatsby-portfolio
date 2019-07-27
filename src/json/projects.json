@@ -63,16 +63,18 @@
     "featured": true
   },
   {
-    "title": "Portfolio",
+    "title": "Top Shelf Logic",
     "classes": "project",
-    "description": "The previous iteration of my portfolio. My favorite thing about this website is the parallax section headings.",
+    "description": "A landing page I created for a local small business using a bootstrap theme.",
     "techList": [
       "Jquery",
-      "HTML5"
+      "HTML5",
+      "Bootstrap",
+      "Formspree"
     ],
     "img": "bookshelf.png",
-    "codeLink": "https://github.com/cadekynaston/portfolio",
-    "siteLink": "https://cadekynaston.github.io/portfolio/",
+    "codeLink": "https://github.com/cadekynaston/top-shelf-logic",
+    "siteLink": "http://www.topshelflogic.com/",
     "featured": false
   },
   {

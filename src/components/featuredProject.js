@@ -69,8 +69,8 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.a`
   padding: 12px 20px;
-  color: ${theme.colors.light};
-  background-color: ${theme.colors.mayerPurple};
+  color: ${theme.colors.darkLight};
+  background-color: ${theme.colors.yellow};
   border-radius: ${theme.borderRadius};
   white-space: nowrap;
   box-shadow: ${theme.boxShadow};

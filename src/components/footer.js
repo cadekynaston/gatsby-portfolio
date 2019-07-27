@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.dark };
+  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.darkBlue };
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -37,7 +37,7 @@ const StyledContainer = styled(Container)`
 
 const FooterCopy = styled.h5`
   font-size: 14px;
-  color: ${theme.colors.lightGray};
+  color: ${theme.colors.yellow};
   text-align: center;
 
   &:first-of-type {
@@ -56,7 +56,7 @@ const FooterCopy = styled.h5`
   }
 
   a {
-    color: ${theme.colors.lightGray};
+    color: ${theme.colors.yellow};
     text-decoration: underline;
 
     &:hover {

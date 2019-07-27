@@ -10,7 +10,7 @@ const Head = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.dark };
+  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.darkBlue };
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -54,10 +54,15 @@ const HeaderSubCopy = styled.h5`
 `
 
 const HeaderLink = styled.a`
-  color: ${theme.colors.clearlinkBlue};
+  color: ${theme.colors.darkBlue};
+  text-shadow: -1px -1px 0 ${theme.colors.yellow}, 1px -1px 0 ${theme.colors.yellow}, -1px 1px 0 ${theme.colors.yellow}, 1px 1px 0 ${theme.colors.yellow};
+  font-size: 44px;
+  font-weight: 600;
+
 
   &:hover {
-    color: ${theme.colors.blueGray};
+    color: ${theme.colors.yellow};
+    text-shadow: unset;
     cursor: pointer;
   }
 `

@@ -118,9 +118,7 @@ const MobileNav = styled.div`
     }
 
     &:hover {
-      color: ${theme.colors.mayerPurple};
-      text-shadow: unset;
-
+      color: ${theme.colors.yellow};
       cursor: pointer;
     }
   }

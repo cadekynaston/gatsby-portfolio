@@ -75,8 +75,8 @@ const StyledForm = styled.form`
 
   button {
     display: block;
-    background-color: ${theme.colors.mayerPurple};
-    color: ${theme.colors.light};
+    background-color: ${theme.colors.yellow};
+    color: ${theme.colors.darkLight};
     border-radius: ${theme.borderRadius};
     padding: 12px 20px;
     box-shadow: ${theme.boxShadow};
@@ -87,7 +87,6 @@ const StyledForm = styled.form`
     margin-left: auto;
     &:hover {
       cursor: pointer;
-      color: ${theme.colors.light};
       box-shadow: ${theme.boxShadowHover};
     }
 
