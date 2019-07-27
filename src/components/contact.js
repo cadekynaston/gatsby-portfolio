@@ -130,22 +130,28 @@ class Contact extends React.Component {
     this.state = { canSubmit: false };
   }
 
-  disableButton = () => {
-    this.setState({ canSubmit: false });
-  }
-
-  enableButton = () =>  {
-    this.setState({ canSubmit: true });
-  }
 
   componentDidMount = () => {
     ScrollReveal().reveal(this.refs.connect, theme.scrollRevealConfig)
     ScrollReveal().reveal(this.refs.image, theme.scrollRevealConfig)
   }
 
-  // handleSubmission = (e) => {
-  //   this.refs.form.submit()
-  // }
+  encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
+  handleSubmission = data => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: this.encode({ "form-name": "Contact Form", ...data })
+    })
+      .then(() => console.log('success'))
+      .catch(error => console.log(error));
+
+  }
 
   render() {
     return (
@@ -169,7 +175,7 @@ class Contact extends React.Component {
                   </div>
                 </FormContainer> */}
                 <FormContainer>
-                  <Formsy name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <Formsy name="Contact Form" onValidSubmit={this.handleSubmission} method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                     <div>
                       <label>Email</label>
                       <FormsyInput
@@ -187,7 +193,7 @@ class Contact extends React.Component {
                         validationError="This is required"
                         required />
                     </div>
-                    <button type="submit">Send</button>
+                    <button type="submit">Send ›</button>
                   </Formsy>
                 </FormContainer>
             </div>
