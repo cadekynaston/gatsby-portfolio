@@ -68,12 +68,11 @@ const Description = styled.p`
  color: ${theme.colors.darkLight};
 
   a {
-
-    color: ${theme.colors.mayerPurple};
+    color: ${theme.colors.darkLight};
     text-decoration: underline;
 
     &:visited {
-      color: ${theme.colors.mayerPurple};
+      color: ${theme.colors.darkLight};
     }
   }
 
