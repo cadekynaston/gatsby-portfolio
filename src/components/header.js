@@ -21,7 +21,7 @@ const Head = styled.header`
 `;
 
 const HeaderText = styled.h1`
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   max-width: 900px;
   ${media.medium} {
     max-width: 700px;
@@ -32,9 +32,8 @@ const HeaderText = styled.h1`
   }
 `
 
-const HeaderCopy = styled.h4`
-  font-size: 40px;
-  color: ${theme.colors.lightGray};
+const HeaderCopy = styled.h3`
+
   max-width: 900px;
   margin-bottom: 15px;
 
@@ -45,7 +44,7 @@ const HeaderCopy = styled.h4`
 
 const HeaderSubCopy = styled.h5`
   font-size: 20px;
-  color: ${theme.colors.lightGray};
+  color: ${theme.colors.gray};
   max-width: 480px;
   margin-bottom: 10px;
 
@@ -55,19 +54,19 @@ const HeaderSubCopy = styled.h5`
 `
 
 const HeaderLink = styled.a`
-  color: ${theme.colors.darkBlue};
-  text-shadow: -1px -1px 0 ${theme.colors.yellow}, 1px -1px 0 ${theme.colors.yellow}, -1px 1px 0 ${theme.colors.yellow}, 1px 1px 0 ${theme.colors.yellow};
-  font-size: 44px;
+  color: ${theme.colors.yellow};
+  /* text-shadow: -1px -1px 0 ${theme.colors.yellow}, 1px -1px 0 ${theme.colors.yellow}, -1px 1px 0 ${theme.colors.yellow}, 1px 1px 0 ${theme.colors.yellow}; */
+
   line-height: 44px;
-  font-weight: 600;
+
 
   ${media.medium} {
     font-size: 32px;
   }
 
   &:hover {
-    color: ${theme.colors.yellow};
-    text-shadow: unset;
+    color: ${theme.colors.darkBlue};
+    text-shadow: -1px -1px 0 ${theme.colors.yellow}, 1px -1px 0 ${theme.colors.yellow}, -1px 1px 0 ${theme.colors.yellow}, 1px 1px 0 ${theme.colors.yellow};
     cursor: pointer;
   }
 `
@@ -79,7 +78,7 @@ const Header = ({ data, bgColor }) => {
     setTimeout(() => setIsMounted(true), 1000)
   }, []);
 
-  const one = () => <HeaderSubCopy style={{ transitionDelay: '100ms' }}>{data.intro}</HeaderSubCopy>;
+  const one = () => <HeaderSubCopy style={{ transitionDelay: '100ms', color:'white' }}>{data.intro}</HeaderSubCopy>;
   const two = () => <HeaderText style={{ transitionDelay: '200ms' }}>{data.name}</HeaderText>;
   const three = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{data.copy} <HeaderLink href="https://www.clearlink.com" target="_blank"> {data.company}</HeaderLink></HeaderCopy>;
   const four = () => <HeaderSubCopy style={{ transitionDelay: '400ms' }}>{data.subCopy}</HeaderSubCopy>;
