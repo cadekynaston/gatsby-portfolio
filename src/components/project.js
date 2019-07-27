@@ -107,7 +107,7 @@ const ProjectLinks = styled.div`
 
 const ProjectLink = styled.a`
 
-  color: ${theme.colors.darkBlue};
+  color: ${theme.colors.clearlinkBlue};
   text-align: center;
   padding: 12px 20px;
   flex-grow: 1;
@@ -116,20 +116,12 @@ const ProjectLink = styled.a`
     color: ${theme.colors.dark};
   }
 
-  ${media.largeUp} {
-    &::after {
-      content: ' ›';
-    }
-  }
-
-
   ${media.medium} {
     width: 50%;
     border-radius: ${theme.borderRadius};
-    background-color: ${theme.colors.yellow};
-    color: ${theme.colors.dark};
+    border: 1px solid ${theme.colors.yellow};
+    color: ${theme.colors.darkLight};
     white-space: nowrap;
-    box-shadow: ${theme.boxShadow};
     transition: ${theme.transition};
 
     :nth-of-type(2) {
@@ -138,7 +130,7 @@ const ProjectLink = styled.a`
 
     &:hover {
       color: ${theme.colors.dark};
-      box-shadow: ${theme.boxShadowHover};
+      box-shadow: ${theme.boxShadow};
     }
 
   }
@@ -167,12 +159,12 @@ const Project = React.forwardRef(({ icon, title, classes, description, techList,
           <ProjectLinks className='project-links'>
               { siteLink !== 'null' &&
                 <ProjectLink className='first' href={siteLink} target='_blank'>
-                  Visit Site
+                  Visit Site ›
                 </ProjectLink>
               }
               { codeLink !== 'null' &&
                 <ProjectLink href={codeLink} target='_blank'>
-                  View Code
+                  View Code ›
                 </ProjectLink>
               }
             </ProjectLinks>

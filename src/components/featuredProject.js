@@ -70,10 +70,9 @@ const ProjectLinks = styled.div`
 const ProjectLink = styled.a`
   padding: 12px 20px;
   color: ${theme.colors.darkLight};
-  background-color: ${theme.colors.yellow};
+  border: 1px solid ${theme.colors.yellow};
   border-radius: ${theme.borderRadius};
   white-space: nowrap;
-  box-shadow: ${theme.boxShadow};
   transition: ${theme.transition};
 
   :nth-of-type(2) {
@@ -81,7 +80,7 @@ const ProjectLink = styled.a`
   }
 
   &:hover {
-    box-shadow: ${theme.boxShadowHover};
+    box-shadow: ${theme.boxShadow};
   }
 
   ${media.small} {
@@ -109,10 +108,10 @@ const FeaturedProject = React.forwardRef(({ img, title, classes, description, te
           <TechList items={techList} />
           <ProjectLinks>
               { siteLink !== 'null' &&
-                <ProjectLink href={siteLink} target='_blank'>Visit Site</ProjectLink>
+                <ProjectLink href={siteLink} target='_blank'>Visit Site ›</ProjectLink>
               }
               { codeLink !== 'null' &&
-                <ProjectLink href={codeLink} target='_blank'>View Code</ProjectLink>
+                <ProjectLink href={codeLink} target='_blank'>View Code ›</ProjectLink>
               }
           </ProjectLinks>
         </FlexRow>
