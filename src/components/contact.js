@@ -139,15 +139,13 @@ class Contact extends React.Component {
   }
 
   componentDidMount = () => {
-    ScrollReveal().reveal(this.refs.form, theme.scrollRevealConfig)
+    ScrollReveal().reveal(this.refs.connect, theme.scrollRevealConfig)
     ScrollReveal().reveal(this.refs.image, theme.scrollRevealConfig)
   }
 
-  handleSubmission = (e) => {
-    // e.preventDefault();
-    console.log(e)
-
-  }
+  // handleSubmission = (e) => {
+  //   this.refs.form.submit()
+  // }
 
   render() {
     return (
@@ -155,10 +153,10 @@ class Contact extends React.Component {
         <Element name="contact" />
         <Container>
           <FlexRow>
-            <div ref="form">
+            <div ref="connect">
                 <Title>Let's Connect.</Title>
                 <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
-                {/* <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                {/* <FormContainer name="Contact Form" method="POST">
                   <input type="hidden" name="form-name" value="Contact Form" />
                   <div>
                     <label>Email</label><input type="email" name="email" placeholder="Email"  />
@@ -169,9 +167,9 @@ class Contact extends React.Component {
                   <div>
                     <button type="submit">Send</button>
                   </div>
-                </StyledForm> */}
+                </FormContainer> */}
                 <FormContainer>
-                  <Formsy onValidSubmit={this.handleSubmission} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <Formsy name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                     <div>
                       <label>Email</label>
                       <FormsyInput
@@ -189,7 +187,7 @@ class Contact extends React.Component {
                         validationError="This is required"
                         required />
                     </div>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Send</button>
                   </Formsy>
                 </FormContainer>
             </div>
