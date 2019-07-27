@@ -118,7 +118,8 @@ const ProjectLink = styled.a`
   ${media.medium} {
     width: 50%;
     border-radius: ${theme.borderRadius};
-    border: 1px solid ${theme.colors.yellow};
+    background-color: ${theme.colors.yellow};
+    box-shadow: ${theme.boxShadow};
     color: ${theme.colors.darkLight};
     white-space: nowrap;
     transition: ${theme.transition};
@@ -129,7 +130,7 @@ const ProjectLink = styled.a`
 
     &:hover {
       color: ${theme.colors.dark};
-      box-shadow: ${theme.boxShadow};
+      box-shadow: ${theme.boxShadowHover};
     }
 
   }
