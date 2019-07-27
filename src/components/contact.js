@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
   width: 100%;
 `
 
-const StyledForm = styled.form`
+const FormContainer = styled.div`
   width: 100%;
   margin-top: 20px;
 
@@ -68,9 +68,27 @@ const StyledForm = styled.form`
     font-size: 14px;
     resize: vertical;
 
+    &.error {
+      border: 1px solid red;
+    }
+
     &:focus {
       outline: none;
     }
+  }
+  input {
+    padding-right: 150px;
+  }
+
+  .error-message {
+    position: absolute;
+    font-size: 12px;
+    height: 12px;
+    color: red;
+    top: 0;
+    right: 10px;
+    bottom: 0;
+    margin: auto;
   }
 
   button {
@@ -88,6 +106,10 @@ const StyledForm = styled.form`
     &:hover {
       cursor: pointer;
       box-shadow: ${theme.boxShadowHover};
+    }
+
+    &:focus {
+      outline: none;
     }
 
     ${media.medium} {
@@ -121,6 +143,11 @@ class Contact extends React.Component {
     ScrollReveal().reveal(this.refs.image, theme.scrollRevealConfig)
   }
 
+  handleSubmission = (e) => {
+    // e.preventDefault();
+    console.log(e)
+
+  }
 
   render() {
     return (
@@ -131,7 +158,7 @@ class Contact extends React.Component {
             <div ref="form">
                 <Title>Let's Connect.</Title>
                 <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
-                <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                {/* <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="Contact Form" />
                   <div>
                     <label>Email</label><input type="email" name="email" placeholder="Email"  />
@@ -142,24 +169,29 @@ class Contact extends React.Component {
                   <div>
                     <button type="submit">Send</button>
                   </div>
-                </StyledForm>
-                {/* <Formsy onValidSubmit={this.submitForm} onValid={this.enableButton} onInvalid={this.disableButton} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-
-                  <div>
-                    <label>Email</label>
-                    <FormsyInput
-                      name="email"
-                      validations="isEmail"
-                      required />
-                  </div>
-                  <div>
-                    <label>Email</label>
-                    <FormsyTextArea
-                      name="message"
-                      required />
-                  </div>
-                  <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
-                </Formsy> */}
+                </StyledForm> */}
+                <FormContainer>
+                  <Formsy onValidSubmit={this.handleSubmission} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <div>
+                      <label>Email</label>
+                      <FormsyInput
+                        name="email"
+                        validations="isEmail"
+                        validationError="This is not a valid email."
+                        placeholder="Email"
+                        required />
+                    </div>
+                    <div>
+                      <label>Message</label>
+                      <FormsyTextArea
+                        name="message"
+                        placeholder="Hey, how's it going?"
+                        validationError="This is required"
+                        required />
+                    </div>
+                    <button type="submit">Submit</button>
+                  </Formsy>
+                </FormContainer>
             </div>
             <ImageContainer ref="image">
                 <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />

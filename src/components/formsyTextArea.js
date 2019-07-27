@@ -8,18 +8,18 @@ class FormsyInput extends React.Component {
   }
 
   render() {
-    // An error message is returned only if the component is invalid
-    const errorMessage = this.props.getErrorMessage();
 
     return (
       <div>
         <textarea
+          className={`${this.props.isPristine() || this.props.isValid() ? 'no-error' : 'error'}`}
+          name={`${this.props.name}`}
           onChange={this.changeValue}
           type="text"
           value={this.props.getValue() || ''}
+          placeholder={this.props.placeholder}
           rows={4}
         />
-        <span>{errorMessage}</span>
       </div>
     );
   }

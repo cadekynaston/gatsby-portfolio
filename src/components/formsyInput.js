@@ -12,13 +12,16 @@ class FormsyInput extends React.Component {
     const errorMessage = this.props.getErrorMessage();
 
     return (
-      <div>
+      <div style={{'position': 'relative'}}>
         <input
+          className={`${this.props.isPristine() || this.props.isValid() ? 'no-error' : 'error'}`}
           onChange={this.changeValue}
+          name={`${this.props.name}`}
           type="text"
           value={this.props.getValue() || ''}
+          placeholder={this.props.placeholder}
         />
-        <span>{errorMessage}</span>
+        <span className="error-message">{errorMessage}</span>
       </div>
     );
   }
