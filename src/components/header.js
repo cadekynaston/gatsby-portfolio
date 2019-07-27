@@ -47,6 +47,7 @@ const HeaderSubCopy = styled.h5`
   font-size: 20px;
   color: ${theme.colors.lightGray};
   max-width: 480px;
+  margin-bottom: 10px;
 
   ${media.medium} {
     font-size: 18px;

@@ -8,7 +8,7 @@ const GlobalStyles = () => {
     styles={css`
 
       html {
-        background-color: ${theme.colors.dark};
+        background-color: ${theme.colors.darkBlue};
       }
 
       h1 {
