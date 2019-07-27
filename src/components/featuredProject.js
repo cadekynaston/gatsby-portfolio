@@ -93,8 +93,6 @@ const ProjectLink = styled.a`
 
 const FeaturedProject = React.forwardRef(({ img, title, classes, description, techList, siteLink, codeLink }, ref) => {
 
-  console.log(codeLink)
-
   return (
     <FeaturedProjectContainer ref={ref} className={classes}>
         <ImgContainer>

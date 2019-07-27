@@ -30,7 +30,7 @@ class Experience extends React.Component  {
   render() {
 
     return (
-      <Section bgColor={theme.colors.darkBlue}>
+      <Section bgColor={theme.colors.darkBlue} id="experience">
         <Element name='experience' />
         <Container>
           <Title ref='title'>Experience.</Title>

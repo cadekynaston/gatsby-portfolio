@@ -124,7 +124,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <Section bgColor={theme.colors.light}>
+      <Section bgColor={theme.colors.light} id="contact">
         <Element name="contact" />
         <Container>
           <FlexRow>

@@ -256,9 +256,9 @@ const Navigation = () => {
         <MobileNavContainer className={`${openNav ? 'open' : 'closed'}`}>
           <MobileNav className={`${openNav ? 'open' : 'closed'}`}>
             <NavLinks>
-              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
-              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
-              <Link className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-30} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
+              <Link href="#projects" className="nav-link" style={{ transitionDelay: `${openNav ? '100ms' : '250ms'}` }} offset={-30} to="projects" spy={true} smooth={true} delay={400} duration={500} >Projects</Link>
+              <Link href="#experience" className="nav-link" style={{ transitionDelay: `${openNav ? '150ms' : '200ms'}` }} offset={-30} to="experience" spy={true} smooth={true} delay={400} duration={500} >Experience</Link>
+              <Link href="#contact" className="nav-link" style={{ transitionDelay: `${openNav ? '200ms' : '150ms'}` }} offset={-30} to="contact" spy={true} smooth={true} delay={400} duration={500} >Contact</Link>
               <a className="nav-link" href="/resume.pdf" target="_blank" rel="noopener noreferrer" style={{ transitionDelay: `${openNav ? '250ms' : '100ms'}` }} >Resume</a>
             </NavLinks>
             <SocialLinks style={{ transitionDelay: `${openNav ? '300ms' : '50ms'}` }} className={`${openNav ? 'open' : 'closed'}`}>

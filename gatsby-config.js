@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Cade Kynaston - Software Developer`,
-    description: `Cade Kynaston is a software developer based in Salt Lake City, Utah. Currently focused on using React and Gatsby to create extremely fast and responsive websites`,
+    description: `Cade Kynaston is a software developer based in Salt Lake City, Utah. He is currently focused on using React and Gatsby to create extremely fast and responsive websites`,
     author: `@cadekynaston`,
+    url: `https://cade.codes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -36,8 +37,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1E2749`,
+        theme_color: `#1E2749`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

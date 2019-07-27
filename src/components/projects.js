@@ -113,7 +113,7 @@ class Projects extends React.Component {
     })
 
     return (
-      <Section bgColor={theme.colors.light}>
+      <Section bgColor={theme.colors.light} id="projects">
         <Element name="projects" />
         <Container>
           <Title ref='title'>Projects.</Title>
