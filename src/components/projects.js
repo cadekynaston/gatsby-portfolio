@@ -74,8 +74,13 @@ class Projects extends React.Component {
   }
 
   componentDidMount = () => {
+    const revealConfig = theme.scrollRevealConfig;
+    revealConfig.afterReveal = el => {
+      el.style.transform = '';
+      el.style.transition = '';
+    }
     ScrollReveal().reveal(this.refs.title, theme.scrollRevealConfig)
-    this.revealRefs.forEach((ref) => ScrollReveal().reveal(ref, theme.scrollRevealConfig));
+    this.revealRefs.forEach((ref) => ScrollReveal().reveal(ref, revealConfig));
   }
 
 

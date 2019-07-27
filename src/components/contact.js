@@ -2,8 +2,11 @@ import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
 import ScrollReveal from 'scrollreveal'
+import Formsy from 'formsy-react';
 
 import { Container, Section, theme, media } from '../styles'
+import FormsyInput from './formsyInput'
+import FormsyTextArea from './formsyTextArea'
 import Image from './image'
 
 const Title = styled.h2`
@@ -101,6 +104,19 @@ const StyledForm = styled.form`
 
 class Contact extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { canSubmit: false };
+  }
+
+  disableButton = () => {
+    this.setState({ canSubmit: false });
+  }
+
+  enableButton = () =>  {
+    this.setState({ canSubmit: true });
+  }
+
   componentDidMount = () => {
     ScrollReveal().reveal(this.refs.form, theme.scrollRevealConfig)
     ScrollReveal().reveal(this.refs.image, theme.scrollRevealConfig)
@@ -128,6 +144,23 @@ class Contact extends React.Component {
                     <button type="submit">Send</button>
                   </div>
                 </StyledForm>
+                {/* <Formsy onValidSubmit={this.submitForm} onValid={this.enableButton} onInvalid={this.disableButton} name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+
+                  <div>
+                    <label>Email</label>
+                    <FormsyInput
+                      name="email"
+                      validations="isEmail"
+                      required />
+                  </div>
+                  <div>
+                    <label>Email</label>
+                    <FormsyTextArea
+                      name="message"
+                      required />
+                  </div>
+                  <button type="submit" disabled={!this.state.canSubmit}>Submit</button>
+                </Formsy> */}
             </div>
             <ImageContainer ref="image">
                 <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />

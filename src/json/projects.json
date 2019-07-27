@@ -17,7 +17,7 @@
   {
     "title": "Bruner Dynamics",
     "classes": "project",
-    "description": "My first Gatsby demo site. The site utilizes GraphQL, gatsby-image, and Emotion to make it extremely fast.",
+    "description": "My first Gatsby demo site. The site utilizes GraphQL, gatsby-image, and Emotion to make it super fast.",
     "techList": [
       "React",
       "Gatsby",
