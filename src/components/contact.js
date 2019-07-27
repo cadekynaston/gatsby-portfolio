@@ -127,7 +127,7 @@ class Contact extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { canSubmit: false };
+    this.state = { submitted: false };
   }
 
 
@@ -148,9 +148,8 @@ class Contact extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({ "form-name": "Contact Form", ...data })
     })
-      .then(() => console.log('success'))
+      .then(() => this.setState({submitted: true}))
       .catch(error => console.log(error));
-
   }
 
   render() {
@@ -160,42 +159,45 @@ class Contact extends React.Component {
         <Container>
           <FlexRow>
             <div ref="connect">
-                <Title>Let's Connect.</Title>
-                <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
-                {/* <FormContainer name="Contact Form" method="POST">
-                  <input type="hidden" name="form-name" value="Contact Form" />
-                  <div>
-                    <label>Email</label><input type="email" name="email" placeholder="Email"  />
-                  </div>
-                  <div>
-                    <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
-                  </div>
-                  <div>
-                    <button type="submit">Send</button>
-                  </div>
-                </FormContainer> */}
-                <FormContainer>
-                  <Formsy name="Contact Form" onValidSubmit={this.handleSubmission} method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                    <div>
-                      <label>Email</label>
-                      <FormsyInput
-                        name="email"
-                        validations="isEmail"
-                        validationError="This is not a valid email."
-                        placeholder="Email"
-                        required />
-                    </div>
-                    <div>
-                      <label>Message</label>
-                      <FormsyTextArea
-                        name="message"
-                        placeholder="Hey, how's it going?"
-                        validationError="This is required"
-                        required />
-                    </div>
-                    <button type="submit">Send ›</button>
-                  </Formsy>
-                </FormContainer>
+                {!this.state.submitted ?
+                <>
+                    <Title>Let's connect.</Title>
+                    <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
+                  <FormContainer>
+                      <Formsy name="Contact Form" onValidSubmit={this.handleSubmission} method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <div>
+                          <label>Email</label>
+                          <FormsyInput
+                            name="email"
+                            validations="isEmail"
+                            validationError="This is not a valid email."
+                            placeholder="Email"
+                            required />
+                        </div>
+                        <div>
+                          <label>Message</label>
+                          <FormsyTextArea
+                            name="message"
+                            placeholder="Hey, how's it going?"
+                            validationError="This is required"
+                            required />
+                        </div>
+                        <div style={{'display':'none'}}>
+                          <label>Don’t fill this out:
+                            <FormsyInput
+                            name="bot-field"
+                             /></label>
+                        </div>
+                        <button type="submit">Send ›</button>
+                      </Formsy>
+                    </FormContainer>
+                  </>
+                  :
+                  <>
+                    <Title>Thanks for reaching out!</Title>
+                    <Copy>I'll get back to you soon.</Copy>
+                  </> }
+
             </div>
             <ImageContainer ref="image">
                 <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
