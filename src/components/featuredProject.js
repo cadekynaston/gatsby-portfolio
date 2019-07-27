@@ -94,6 +94,8 @@ const ProjectLink = styled.a`
 
 const FeaturedProject = React.forwardRef(({ img, title, classes, description, techList, siteLink, codeLink }, ref) => {
 
+  console.log(codeLink)
+
   return (
     <FeaturedProjectContainer ref={ref} className={classes}>
         <ImgContainer>
@@ -106,10 +108,10 @@ const FeaturedProject = React.forwardRef(({ img, title, classes, description, te
         <FlexRow>
           <TechList items={techList} />
           <ProjectLinks>
-              { siteLink &&
+              { siteLink !== 'null' &&
                 <ProjectLink href={siteLink} target='_blank'>Visit Site</ProjectLink>
               }
-              { codeLink &&
+              { codeLink !== 'null' &&
                 <ProjectLink href={codeLink} target='_blank'>View Code</ProjectLink>
               }
           </ProjectLinks>

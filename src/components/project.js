@@ -158,12 +158,12 @@ const Project = React.forwardRef(({ icon, title, classes, description, techList,
         </div>
         <div>
           <ProjectLinks className='project-links'>
-              { siteLink &&
+              { siteLink !== 'null' &&
                 <ProjectLink className='first' href={siteLink} target='_blank'>
                   Visit Site &rsaquo;
                 </ProjectLink>
               }
-              { codeLink &&
+              { codeLink !== 'null' &&
                 <ProjectLink href={codeLink} target='_blank'>
                   View Code &rsaquo;
                 </ProjectLink>
