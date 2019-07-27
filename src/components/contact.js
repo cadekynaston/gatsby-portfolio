@@ -186,6 +186,7 @@ class Contact extends React.Component {
                           <label>Don’t fill this out:
                             <FormsyInput
                             name="bot-field"
+                            value=""
                              /></label>
                         </div>
                         <button type="submit">Send ›</button>
