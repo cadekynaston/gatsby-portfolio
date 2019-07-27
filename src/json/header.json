@@ -1,9 +1,11 @@
 [
   {
-    "name": "Cade Kynaston. Software Developer at",
-    "company": "Clearlink",
+    "intro": "Hi, I'm",
+    "name": "Cade Kynaston.",
+    "copy": "And I'm a software Developer at",
+    "company": "Clearlink.",
     "companyURL": "https://www.clearlink.com",
     "subtitle": "Software Developer",
-    "copy": "Currently focused on improving my React + Javascript skills."
+    "subCopy": "I'm currently focused on using React and Gatsby to create extremely fast and responsive websites."
   }
 ]

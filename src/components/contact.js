@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
+import ScrollReveal from 'scrollreveal'
 
 import { Container, Section, theme, media } from '../styles'
 import Image from './image'
@@ -56,7 +57,7 @@ const StyledForm = styled.form`
   textarea {
     width: 100%;
     max-width: 100%;
-    border: 1px solid ${theme.colors.darkLight};
+    border: 1px solid ${theme.colors.gray};
     color: ${theme.colors.dark};
     margin-top: 5px;
     border-radius: ${theme.borderRadius};
@@ -98,36 +99,44 @@ const StyledForm = styled.form`
 `
 
 
-const Contact = () => {
+class Contact extends React.Component {
 
-  return (
-    <Section bgColor={theme.colors.light}>
-      <Element name="contact" />
-      <Container>
-        <FlexRow>
-          <div>
-              <Title>Let's Connect.</Title>
-              <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
-              <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="Contact Form" />
-                <div>
-                  <label>Email</label><input type="email" name="email" placeholder="Email"  />
-                </div>
-                <div>
-                  <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
-                </div>
-                <div>
-                  <button type="submit">Send</button>
-                </div>
-              </StyledForm>
-          </div>
-          <ImageContainer>
-              <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
-          </ImageContainer>
-        </FlexRow>
-      </Container>
-    </Section>
-  )
+  componentDidMount = () => {
+    ScrollReveal().reveal(this.refs.form, theme.scrollRevealConfig)
+    ScrollReveal().reveal(this.refs.image, theme.scrollRevealConfig)
+  }
+
+
+  render() {
+    return (
+      <Section bgColor={theme.colors.light}>
+        <Element name="contact" />
+        <Container>
+          <FlexRow>
+            <div ref="form">
+                <Title>Let's Connect.</Title>
+                <Copy>If you want to know more about me or my work, or if you would just like to say hello, send me a message. I'd love to hear from you.</Copy>
+                <StyledForm name="Contact Form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <input type="hidden" name="form-name" value="Contact Form" />
+                  <div>
+                    <label>Email</label><input type="email" name="email" placeholder="Email"  />
+                  </div>
+                  <div>
+                    <label>Message</label><textarea name="message"  placeholder="Hey, how's it going?" rows="3"></textarea>
+                  </div>
+                  <div>
+                    <button type="submit">Send</button>
+                  </div>
+                </StyledForm>
+            </div>
+            <ImageContainer ref="image">
+                <Image filename="message.png" classes='gatsby-sbs-image' alt="Send me a message and let's connect." />
+            </ImageContainer>
+          </FlexRow>
+        </Container>
+      </Section>
+    )
+  }
 }
 
 export default Contact

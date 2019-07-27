@@ -12,8 +12,8 @@ const GlobalStyles = () => {
       }
 
       h1 {
-        font-size: 60px;
-        line-height: 62px;
+        font-size: 70px;
+        line-height: 72px;
         color: ${theme.colors.light};
         font-family: ${theme.fonts.Raleway};
         margin-bottom: 30px;
@@ -21,13 +21,13 @@ const GlobalStyles = () => {
         font-weight: 600;
 
         ${media.medium} {
-          font-size: 50px;
-          line-height: 52px;
+          font-size: 54px;
+          line-height: 56px;
         }
 
         ${media.small} {
-          font-size: 34px;
-          line-height: 36px;
+          font-size: 40px;
+          line-height: 42px;
         }
       }
 

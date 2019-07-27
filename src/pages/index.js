@@ -25,11 +25,13 @@ export const query = graphql`
   query IndexQuery {
 
     header: headerJson {
+      intro
       name
       company
       companyURL
       subtitle
       copy
+      subCopy
     }
 
     projects: allProjectsJson {

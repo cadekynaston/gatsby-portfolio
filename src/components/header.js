@@ -21,7 +21,7 @@ const Head = styled.header`
 `;
 
 const HeaderText = styled.h1`
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   max-width: 900px;
   ${media.medium} {
     max-width: 700px;
@@ -32,13 +32,24 @@ const HeaderText = styled.h1`
   }
 `
 
-const HeaderCopy = styled.h5`
-  font-size: 20px;
+const HeaderCopy = styled.h4`
+  font-size: 40px;
   color: ${theme.colors.lightGray};
   max-width: 900px;
+  margin-bottom: 15px;
 
   ${media.medium} {
-    font-size: 16px;
+    font-size: 30px;
+  }
+`
+
+const HeaderSubCopy = styled.h5`
+  font-size: 20px;
+  color: ${theme.colors.lightGray};
+  max-width: 480px;
+
+  ${media.medium} {
+    font-size: 18px;
   }
 `
 
@@ -58,10 +69,12 @@ const Header = ({ data, bgColor }) => {
     setTimeout(() => setIsMounted(true), 1000)
   }, []);
 
-  const one = () => <HeaderText style={{ transitionDelay: '200ms' }}>{data.name}<HeaderLink href="https://www.clearlink.com" target="_blank"> {data.company}</HeaderLink></HeaderText>;
-  const two = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{data.copy}</HeaderCopy>;
+  const one = () => <HeaderSubCopy style={{ transitionDelay: '100ms' }}>{data.intro}</HeaderSubCopy>;
+  const two = () => <HeaderText style={{ transitionDelay: '200ms' }}>{data.name}</HeaderText>;
+  const three = () => <HeaderCopy style={{ transitionDelay: '300ms' }}>{data.copy} <HeaderLink href="https://www.clearlink.com" target="_blank"> {data.company}</HeaderLink></HeaderCopy>;
+  const four = () => <HeaderSubCopy style={{ transitionDelay: '400ms' }}>{data.subCopy}</HeaderSubCopy>;
 
-  const items = [one, two];
+  const items = [one, two, three, four];
 
   return (
     <Head bgColor={bgColor}>
