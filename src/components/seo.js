@@ -61,7 +61,7 @@ function SEO({ lang, meta, keywords, title }) {
         },
         {
           property: `twitter:image`,
-          content: `${siteSnapshot}`,
+          content: `https://cade.codes/${siteSnapshot}`,
         },
         {
           property: `twitter:image:alt`,
