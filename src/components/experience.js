@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Element } from 'react-scroll'
-// import ScrollReveal from 'scrollreveal'
+import ScrollReveal from 'scrollreveal'
 
 import ExperienceItem from './experienceItem'
 import { Container, Section, theme } from '../styles'
@@ -40,8 +40,8 @@ class Experience extends React.Component  {
       viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
     };
 
-    // ScrollReveal().reveal(this.refs.title, config)
-    // this.revealRefs.forEach((ref) => ScrollReveal().reveal(ref, config));
+    ScrollReveal().reveal(this.refs.title, config)
+    this.revealRefs.forEach((ref) => ScrollReveal().reveal(ref, config));
   }
 
 
