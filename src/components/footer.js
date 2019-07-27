@@ -37,7 +37,7 @@ const StyledContainer = styled(Container)`
 
 const FooterCopy = styled.h5`
   font-size: 14px;
-  color: ${theme.colors.yellow};
+  color: ${theme.colors.light};
   text-align: center;
 
   &:first-of-type {

@@ -58,8 +58,12 @@ const HeaderLink = styled.a`
   color: ${theme.colors.darkBlue};
   text-shadow: -1px -1px 0 ${theme.colors.yellow}, 1px -1px 0 ${theme.colors.yellow}, -1px 1px 0 ${theme.colors.yellow}, 1px 1px 0 ${theme.colors.yellow};
   font-size: 44px;
+  line-height: 44px;
   font-weight: 600;
 
+  ${media.medium} {
+    font-size: 32px;
+  }
 
   &:hover {
     color: ${theme.colors.yellow};
