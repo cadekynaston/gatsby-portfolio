@@ -3,7 +3,8 @@ import styled from '@emotion/styled';
 import { Link , Events } from 'react-scroll'
 
 import { theme, media } from '../styles'
-import gatsbyLogo from '../images/gatsby-icon.png'
+import logoLight from '../images/ck-logo-light.svg'
+import logoDark from '../images/ck-logo-dark.svg'
 import SocialIconLinks from './socialIconLinks';
 
 const Nav = styled.nav`
@@ -268,7 +269,7 @@ const Navigation = () => {
         <MobileNavOverlay onClick={() => updateOpenNav(false)} className={`${openNav ? 'open' : 'closed'}`} />
       </MobileNavContainer>
       <Nav className={`${scrolledTop ? 'top' : 'scrolled'}`}>
-        <NavLogo src={gatsbyLogo} alt="Gatsby Logo" />
+        <NavLogo src={scrolledTop ? logoLight : logoDark} alt="Cade Kynaston Logo" />
         <NavButton
           onClick={() => updateOpenNav(prevState => !prevState)}
           className={`${openNav ? 'open' : 'closed'} ${scrolledTop ? 'top' : 'scrolled'}`} >
