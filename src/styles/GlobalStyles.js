@@ -58,7 +58,7 @@ const GlobalStyles = () => {
           margin-bottom: 15px;
           font-weight: 400;
           color: ${theme.colors.gray};
-          font-family: ${theme.fonts.RobotoMono};
+          font-family: ${theme.fonts.SpaceMono};
 
           ${media.medium} {
             font-size: 32px;
