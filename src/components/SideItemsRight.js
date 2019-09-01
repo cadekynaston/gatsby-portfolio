@@ -34,7 +34,7 @@ const Email = styled.p`
   writing-mode: vertical-rl;
   color: white;
   mix-blend-mode: difference;
-  font-family: ${theme.fonts.RobotoMono};
+  font-family: ${theme.fonts.SpaceMono};
   margin-bottom: 15px;
 `
 

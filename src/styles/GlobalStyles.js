@@ -133,7 +133,7 @@ const GlobalStyles = () => {
         p {
           font-size: 16px;
           /* line-height: 24px; */
-          font-family: ${theme.fonts.RobotoMono};
+          font-family: ${theme.fonts.SpaceMono};
           color: ${theme.colors.dark};
 
           &.legal {
