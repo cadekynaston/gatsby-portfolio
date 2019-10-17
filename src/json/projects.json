@@ -17,7 +17,7 @@
   {
     "title": "Utah Pumpkins",
     "classes": "project",
-    "description": "Every year my family grows and carves hundreds of pumpkins so I wanted to build a site to show them off. It was also a great opportunity to become more familiar with Contentful",
+    "description": "Every year my family grows and carves hundreds of pumpkins so I wanted to build a site to show them off. It was also a great opportunity to become more familiar with Contentful.",
     "techList": [
       "Contentful",
       "Gatsby",
