@@ -1,17 +1,17 @@
 [
   {
-    "title": "Connect 4 React",
-    "classes": "feature-1 featured",
-    "description": "My first site using state within React. When I learn a new language or library I usually create some version of Connect 4 to learn more about how the language works. In fact Connect 4 was the first website I ever created!",
+    "title": "Establish Design",
+    "classes": "featured feature-1",
+    "description": "A site I helped create for a client to show off their architectural and interior designs. We ended up migrating the site from Netlify CMS to Contentful after realizing that Contentful would be a better match for our needs.",
     "techList": [
-      "React",
-      "Github Pages",
-      "React Color Picker",
-      "Google Analytics"
+      "Gatsby",
+      "Contentful",
+      "Netlify CMS",
+      "Emotion",
+      "Netlify"
     ],
-    "img": "react-connect-4.png",
-    "codeLink": "https://github.com/cadekynaston/connect4-react",
-    "siteLink": "https://cadekynaston.github.io/connect4-react/",
+    "img": "establish-design-logo.jpg",
+    "siteLink": "https://establishdesign.com/",
     "featured": true
   },
   {
@@ -32,35 +32,18 @@
     "featured": false
   },
   {
-    "title": "Bruner Dynamics",
+    "title": "Connect 4 React",
     "classes": "project",
-    "description": "My first Gatsby demo site. The site utilizes GraphQL, gatsby-image, and Emotion to make it super fast.",
+    "description": "A game I created to become more familiar with React and using state.",
     "techList": [
       "React",
-      "Gatsby",
-      "Netlify",
-      "Emotion",
-      "GraphQL"
+      "Github Pages",
+      "React Color Picker",
+      "Google Analytics"
     ],
-    "img": "bruner-logo.png",
-    "codeLink": "https://github.com/cadekynaston/gatsby-bruner-dynamics",
-    "siteLink": "https://brunerdynamics.netlify.com/",
-    "featured": false
-  },
-  {
-    "title": "Clearlink",
-    "classes": "project",
-    "description": "At Clearlink I've worked on an assortment of sites including <a href='https://www.usdish.com/' target='_blank'>USDISH</a>, <a href='https://www.yourlocalsecurity.com/' target='_blank'>Your Local Security</a>, and <a href='https://www.frontierbundles.com/' target='_blank'>Frontier Bundles</a>.",
-    "techList": [
-      "PHP",
-      "Handlebars.js",
-      "Sketch",
-      "SCSS",
-      "Jira",
-      "GitHub"
-    ],
-    "img": "clearlink.jpeg",
-    "siteLink": "https://www.clearlink.com/",
+    "img": "react-connect-4.png",
+    "codeLink": "https://github.com/cadekynaston/connect4-react",
+    "siteLink": "https://cadekynaston.github.io/connect4-react/",
     "featured": false
   },
   {
@@ -80,18 +63,35 @@
     "featured": true
   },
   {
-    "title": "Top Shelf Logic",
+    "title": "Clearlink",
     "classes": "project",
-    "description": "A landing page I created for a local small business using a bootstrap theme.",
+    "description": "At Clearlink I've worked on an assortment of sites including <a href='https://www.usdish.com/' target='_blank'>USDISH</a>, <a href='https://www.yourlocalsecurity.com/' target='_blank'>Your Local Security</a>, and <a href='https://www.frontierbundles.com/' target='_blank'>Frontier Bundles</a>.",
     "techList": [
-      "Jquery",
-      "HTML5",
-      "Bootstrap",
-      "Formspree"
+      "PHP",
+      "Handlebars.js",
+      "Sketch",
+      "SCSS",
+      "Jira",
+      "GitHub"
     ],
-    "img": "bookshelf.png",
-    "codeLink": "https://github.com/cadekynaston/top-shelf-logic",
-    "siteLink": "http://www.topshelflogic.com/",
+    "img": "clearlink.jpeg",
+    "siteLink": "https://www.clearlink.com/",
+    "featured": false
+  },
+  {
+    "title": "Bruner Dynamics",
+    "classes": "project",
+    "description": "My first Gatsby demo site. The site was a great first look into seeing how powerful Gatsby can be.",
+    "techList": [
+      "React",
+      "Gatsby",
+      "Netlify",
+      "Emotion",
+      "GraphQL"
+    ],
+    "img": "bruner-logo.png",
+    "codeLink": "https://github.com/cadekynaston/gatsby-bruner-dynamics",
+    "siteLink": "https://brunerdynamics.netlify.com/",
     "featured": false
   }
 ]

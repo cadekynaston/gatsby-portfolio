@@ -45,6 +45,7 @@ const Description = styled.p`
 `
 
 const FlexRow = styled.div`
+  margin-top: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
