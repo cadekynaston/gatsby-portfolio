@@ -2,14 +2,16 @@
   {
     "company": "@Clearlink",
     "dates": "January 2018 — Current",
-    "position": "Front End Developer",
-    "copy": "At Clearlink I create SEO driven websites to generate new customers for our brand partners. I work closely with SEO specialists, designers and marketers to create responsive sites.",
+    "position": "Software Engineer",
+    "copy": "At Clearlink I am helping to create a custom CMS using Gatsby and Contentful. I was promoted from a front end developer position where I would create SEO driven websites to generate new customers for our brand partners.",
     "jobFeatures": [
-      "PHP",
+      "Gatsby",
+      "React",
       "Handlebars",
-      "Jira",
+      "PHP",
       "Sketch",
-      "GitHub",
+      "Contentful",
+      "Jira",
       "SCSS"
     ],
     "open": true
