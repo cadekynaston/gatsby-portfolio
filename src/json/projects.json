@@ -15,6 +15,22 @@
     "featured": true
   },
   {
+    "title": "Vuer",
+    "classes": "project",
+    "description": "My first Vue application. I wanted to learn Vue so I created this GitHub profile viewing app.",
+    "techList": [
+      "Vue",
+      "Bulma",
+      "Charts,js",
+      "Bulma",
+      "Moment.js"
+    ],
+    "img": "vue-logo.png",
+    "codeLink": "https://github.com/cadekynaston/vuer",
+    "siteLink": "https://vuer.now.sh/?u=cadekynaston",
+    "featured": false
+  },
+  {
     "title": "Utah Pumpkins",
     "classes": "project",
     "description": "Every year my family grows and carves hundreds of pumpkins so I wanted to build a site to show them off. It was also a great opportunity to become more familiar with Contentful.",
@@ -76,22 +92,6 @@
     ],
     "img": "clearlink.jpeg",
     "siteLink": "https://www.clearlink.com/",
-    "featured": false
-  },
-  {
-    "title": "Bruner Dynamics",
-    "classes": "project",
-    "description": "My first Gatsby demo site. The site was a great first look into seeing how powerful Gatsby can be.",
-    "techList": [
-      "React",
-      "Gatsby",
-      "Netlify",
-      "Emotion",
-      "GraphQL"
-    ],
-    "img": "bruner-logo.png",
-    "codeLink": "https://github.com/cadekynaston/gatsby-bruner-dynamics",
-    "siteLink": "https://brunerdynamics.netlify.com/",
     "featured": false
   }
 ]
