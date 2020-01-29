@@ -66,7 +66,7 @@ const Footer = ({ bgColor }) => {
   return (
     <StyledFooter bgColor={bgColor}>
       <StyledContainer>
-        <FooterCopy>Cade Kynaston 2020. Made using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a>. View the code <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">on GitHub</a>. </FooterCopy>
+        <FooterCopy>Cade Kynaston 2020. Made using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a>. View the code <a href="https://github.com/cadekynaston/gatsby-portfolio" target="_blank" rel="noopener noreferrer">on GitHub</a>. </FooterCopy>
       </StyledContainer>
     </StyledFooter>
   )
