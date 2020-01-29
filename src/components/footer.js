@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.darkBlue };
+  background-color: ${props => props.bgColor ? props.bgColor : theme.colors.darkBlue};
   padding-left: 1rem;
   padding-right: 1rem;
 
@@ -20,7 +20,7 @@ const StyledFooter = styled.footer`
 
 const StyledContainer = styled(Container)`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 25px;
   padding-bottom: 25px;
 
@@ -41,14 +41,9 @@ const FooterCopy = styled.h5`
   text-align: center;
 
   &:first-of-type {
-    text-align: left;
     ${media.small} {
       margin-bottom: 20px;
     }
-  }
-
-  &:last-of-type {
-    text-align: right;
   }
 
   ${media.medium} {
@@ -71,8 +66,7 @@ const Footer = ({ bgColor }) => {
   return (
     <StyledFooter bgColor={bgColor}>
       <StyledContainer>
-        <FooterCopy>Cade Kynaston 2019</FooterCopy>
-        <FooterCopy>Made using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a> + <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> + <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a></FooterCopy>
+        <FooterCopy>Cade Kynaston 2020. Made using <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a>. View the code <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">on GitHub</a>. </FooterCopy>
       </StyledContainer>
     </StyledFooter>
   )
