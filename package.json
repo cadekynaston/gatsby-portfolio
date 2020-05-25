@@ -14,9 +14,10 @@
     "gatsby-plugin-google-analytics": "^2.1.4",
     "gatsby-plugin-manifest": "^2.0.26",
     "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-preload-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.0.10",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.2.2",
@@ -33,6 +34,8 @@
     "scrollreveal": "^4.0.5"
   },
   "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3",
     "prettier": "^1.16.4"
   },
   "keywords": [
@@ -45,7 +48,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "repository": {
     "type": "git",

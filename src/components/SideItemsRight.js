@@ -1,9 +1,8 @@
+import React, { useState, useEffect } from "react"
+import styled from "@emotion/styled"
+import { CSSTransition, TransitionGroup } from "react-transition-group"
 
-import React, { useState, useEffect } from 'react'
-import styled from '@emotion/styled'
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-
-import { theme, media } from '../styles'
+import { theme, media } from "../styles"
 
 const ItemsContainer = styled.div`
   position: fixed;
@@ -12,7 +11,7 @@ const ItemsContainer = styled.div`
   right: 40px;
   bottom: 0;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   mix-blend-mode: difference;
 
   ${media.largeUp} {
@@ -35,23 +34,21 @@ const Email = styled.p`
   writing-mode: vertical-rl;
   color: white;
   mix-blend-mode: difference;
-  font-family: ${theme.fonts.RobotoMono};
+  font-family: ${theme.fonts.SpaceMono};
   margin-bottom: 15px;
 `
 
 const SideItemsRight = () => {
-
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setIsMounted(true), 1800);
-  }, []);
+    setTimeout(() => setIsMounted(true), 1800)
+  }, [])
 
   return (
-
     <TransitionGroup>
-      {isMounted &&
-        <CSSTransition  classNames="fade" timeout={1000}>
+      {isMounted && (
+        <CSSTransition classNames="fade" timeout={1000}>
           <ItemsContainer>
             <a href="mailto:cadekynaston@gmail.com">
               <Email>cadekynaston@gmail.com</Email>
@@ -59,9 +56,8 @@ const SideItemsRight = () => {
             <Line />
           </ItemsContainer>
         </CSSTransition>
-      }
+      )}
     </TransitionGroup>
-
   )
 }
 
