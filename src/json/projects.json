@@ -15,6 +15,20 @@
     "featured": true
   },
   {
+    "title": "American Curb",
+    "classes": "project",
+    "description": "American Curb is a local landscaping business that I designed and developed.",
+    "techList": [
+      "Next JS",
+      "Theme UI",
+      "Vercel"
+    ],
+    "img": "americancurb.png",
+    "codeLink": "https://github.com/cadekynaston/americancurb",
+    "siteLink": "https://www.americancurb.co/",
+    "featured": false
+  },
+  {
     "title": "Vuer",
     "classes": "project",
     "description": "My first Vue application. I wanted to learn Vue so I created this GitHub profile viewing app.",
@@ -45,21 +59,6 @@
     "img": "utah-pumpkins.png",
     "codeLink": "https://github.com/cadekynaston/utah-pumpkins",
     "siteLink": "https://www.utahpumpkins.com/",
-    "featured": false
-  },
-  {
-    "title": "Connect 4 React",
-    "classes": "project",
-    "description": "A game I created to become more familiar with React and using state.",
-    "techList": [
-      "React",
-      "Github Pages",
-      "React Color Picker",
-      "Google Analytics"
-    ],
-    "img": "react-connect-4.png",
-    "codeLink": "https://github.com/cadekynaston/connect4-react",
-    "siteLink": "https://cadekynaston.github.io/connect4-react/",
     "featured": false
   },
   {
