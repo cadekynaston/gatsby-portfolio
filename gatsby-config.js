@@ -51,21 +51,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Raleway`,
-            variants: [`300`, `500`, `600`]
-          },
-          {
-            family: `Roboto`,
-            variants: [`400`, `700`]
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-137604730-4"

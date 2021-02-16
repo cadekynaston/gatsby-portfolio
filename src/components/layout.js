@@ -6,6 +6,8 @@ import Navigation from './Navigation';
 import SideItemsLeft from './SideItemsLeft'
 import SideItemsRight from './SideItemsRight'
 import SEO from '../components/seo';
+import "@fontsource/raleway"
+import "@fontsource/roboto"
 
 const Layout = ({ children }) => {
   return (
